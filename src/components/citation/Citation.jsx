@@ -10,7 +10,7 @@ const Citation = () => {
       <Card maxW='sm'>
         <CardBody>
           <Image
-            src='interstellar-trou-noir.webp'
+            src='../public/images/interstellar-trou-noir.webp'
             alt='Green double couch with wooden legs'
             borderRadius='lg'
           />
@@ -34,7 +34,7 @@ const Citation = () => {
       <Card maxW='sm'>
         <CardBody>
           <Image
-            src='soleil-sourire.jpeg'
+            src='../public/images/soleil-sourire.jpeg'
             alt='Green double couch with wooden legs'
             borderRadius='lg'
           />
@@ -55,7 +55,7 @@ const Citation = () => {
       <Card maxW='sm'>
         <CardBody>
           <Image
-            src='vaisseau.jpg'
+            src='../public/images/vaisseau.jpg'
             alt='Green double couch with wooden legs'
             borderRadius='lg'
           />
