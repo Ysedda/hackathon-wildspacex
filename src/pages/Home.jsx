@@ -1,8 +1,16 @@
 import { Heading, Center, Text } from "@chakra-ui/react";
+import Activities from "../components/Activities";
+import Travels from "../components/Travels";
 
 const Home = () => {
+  const mainStyle = {
+    backgroundImage: "url(/images/background.png)",
+    backgroundRepeat: "repeat",
+    backgroundSize: "40%",
+  };
+
   return (
-    <div>
+    <div style={mainStyle}>
       <Center>
         <Heading as="h1" size="4xl" fontSize="200px" m="100px">
           WildSpaceX
@@ -15,6 +23,8 @@ const Home = () => {
         dolor ullam! Similique. Accusamus, aperiam cum aliquid dolorum molestiae
         provident possimus nihil est fugiat repellendus, necessitatibus dicta
       </Text>
+      <Activities destination="jupiter" />
+      <Travels destination="jupiter" />
     </div>
   );
 };
