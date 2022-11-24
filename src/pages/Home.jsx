@@ -88,7 +88,6 @@ const Home = () => {
         justifyContent="center"
         h="100vh"
         w="100%"
-        backgroundColor="black"
       >
         <div className="decode-text">
           <div className="text-animation">W</div>
