@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Box, Center, Flex, Text } from "@chakra-ui/react";
 import Planet from "../planet/Planet";
+import PlanetModel from "../planet-model/PlanetModel";
 import Activities from "../activities/Activities";
 import Travels from "../travels/Travels";
 import { useEffect } from "react";
@@ -74,7 +75,7 @@ const PlanetList = () => {
     ["0.2", "1", "0.4"]
   );
 
-    const jupiterScrollX = useTransform(
+  const jupiterScrollX = useTransform(
     scrollY,
     [1900, 2200, 2400],
     ["-100%", "50%", "70%"]
@@ -149,10 +150,9 @@ const PlanetList = () => {
       <Box h="3900px" overflowX={"hidden"}>
         <Center>
           <Flex w="500px" direction={"column"}>
-            <motion.div
-              style={{ y: soleilY }}
-            >
-              <Planet image="/images/soleil.png" />
+            <motion.div style={{ y: soleilY }}>
+              {/* <Planet image="/images/soleil.png" /> */}
+              <PlanetModel planet="soleil" size="200px" />
               <Center>
                 <Text color={"white"} fontSize={"3rem"}>
                   Soleil
@@ -166,7 +166,8 @@ const PlanetList = () => {
           style={{ y: mercuryScrollY, x: mercuryScrollX, scale: mercuryScale }}
         >
           <Flex w="300px" direction={"column"}>
-          <Planet image="/images/mercure.png" />
+            {/* <Planet image="/images/mercure.png" /> */}
+            <PlanetModel planet="mercure" size="200px" />
             <Center>
               <Text color={"white"} fontSize={"3rem"}>
                 Mercure
@@ -178,7 +179,8 @@ const PlanetList = () => {
           style={{ y: venusScrollY, x: venusScrollX, scale: venusScale }}
         >
           <Flex w="300px" direction={"column"}>
-          <Planet image="/images/venus.png" />
+            {/* <Planet image="/images/venus.png" /> */}
+            <PlanetModel planet="venus" size="200px" />
             <Center>
               <Text color={"white"} fontSize={"3rem"}>
                 Venus
@@ -190,7 +192,8 @@ const PlanetList = () => {
           style={{ y: terreScrollY, x: terreScrollX, scale: terreScale }}
         >
           <Flex w="300px" direction={"column"}>
-          <Planet image="/images/terre.png" />
+            {/* <Planet image="/images/terre.png" /> */}
+            <PlanetModel planet="terre" size="200px" />
             <Center>
               <Text color={"white"} fontSize={"3rem"}>
                 Terre
@@ -202,7 +205,8 @@ const PlanetList = () => {
           style={{ y: marsScrollY, x: marsScrollX, scale: marsScale }}
         >
           <Flex w="300px" direction={"column"}>
-          <Planet image="/images/mars.png" />
+            {/* <Planet image="/images/mars.png" /> */}
+            <PlanetModel planet="mars" size="200px" />
             <Center>
               <Text color={"white"} fontSize={"3rem"}>
                 Mars
@@ -214,7 +218,8 @@ const PlanetList = () => {
           style={{ y: jupiterScrollY, x: jupiterScrollX, scale: jupiterScale }}
         >
           <Flex w="500px" direction={"column"}>
-          <Planet image="/images/jupiter.png" />
+            {/* <Planet image="/images/jupiter.png" /> */}
+            <PlanetModel planet="jupiter" size="200px" />
             <Center>
               <Text color={"white"} fontSize={"3rem"}>
                 Jupiter
@@ -226,7 +231,8 @@ const PlanetList = () => {
           style={{ y: saturneScrollY, x: saturneScrollX, scale: saturneScale }}
         >
           <Flex w="300px" direction={"column"}>
-          <Planet image="/images/saturne.png" />
+            {/* <Planet image="/images/saturne.png" /> */}
+            <PlanetModel planet="saturne" size="200px" />
             <Center>
               <Text color={"white"} fontSize={"2rem"}>
                 Jupiter
@@ -238,7 +244,8 @@ const PlanetList = () => {
           style={{ y: uranusScrollY, x: uranusScrollX, scale: uranusScale }}
         >
           <Flex w="300px" direction={"column"}>
-          <Planet image="/images/uranus.png" />
+            {/* <Planet image="/images/uranus.png" /> */}
+            <PlanetModel planet="uranus" size="200px" />
             <Center>
               <Text color={"white"} fontSize={"2rem"}>
                 Uranus
@@ -250,7 +257,8 @@ const PlanetList = () => {
           style={{ y: neptuneScrollY, x: neptuneScrollX, scale: neptuneScale }}
         >
           <Flex w="300px" direction={"column"}>
-          <Planet image="/images/neptune.png" />
+            {/* <Planet image="/images/neptune.png" /> */}
+            <PlanetModel planet="neptune" size="200px" />
             <Center>
               <Text color={"white"} fontSize={"2rem"}>
                 Neptune
@@ -259,7 +267,7 @@ const PlanetList = () => {
           </Flex>
         </motion.div>
         <Activities destination="jupiter" />
-        <Travels destination="jupiter" />
+        <Travels destination="soleil" />
       </Box>
     </>
   );

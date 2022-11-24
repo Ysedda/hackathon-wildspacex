@@ -64,6 +64,7 @@ const PlanetsModel = ({ planet, size }) => {
       let scale = 100;
       if (planet === "uranus") scale *= 443;
       if (planet === "saturne") scale *= 1.95;
+      if (planet === "soleil") scale /= 1900;
 
       const camera = new THREE.OrthographicCamera(
         -scale,
