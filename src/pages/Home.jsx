@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Citation from "../components/citation/Citation";
 import { Text, Flex, Box, Image } from "@chakra-ui/react";
 import {
   MouseParallaxChild,
@@ -6,6 +7,7 @@ import {
 } from "react-parallax-mouse";
 import PlanetList from "../components/planet-list/PlanetList";
 import "./home.css";
+
 
 const Home = () => {
   const homeStyle = {
@@ -225,6 +227,7 @@ const Home = () => {
         </Flex>
       </MouseParallaxContainer>
       <PlanetList />
+      <Citation />
     </div>
   );
 };
