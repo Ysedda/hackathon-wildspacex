@@ -1,12 +1,15 @@
-import { ChakraProvider } from "@chakra-ui/react";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 
 function App() {
-
   return (
-    <ChakraProvider>
-      <div>WildSpaceX</div>
-    </ChakraProvider>
+    <div>
+      <Routes>
+        <Route path="/" element={"un truc"} />
+        <Route path="/travel" element={""} />
+        <Route path="*" element={"Not Found"} />
+      </Routes>
+    </div>
   );
 }
 
