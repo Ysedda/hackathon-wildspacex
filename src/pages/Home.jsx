@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { Text, Flex, Box } from "@chakra-ui/react";
 import Citation from "../components/citation/Citation";
 import { Text, Flex, Box, Image } from "@chakra-ui/react";
 import {
