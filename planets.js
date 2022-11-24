@@ -259,7 +259,7 @@ export const planets = [
     name: "Uranus",
     image: "mars.jpg",
     activities: [
-      { name: "Blanchiment des ... dents", image: "dent.jpg" },
+      { name: "Blanchiments des ... dents", image: "dent.jpg" },
       { name: "Musée Jeux de mots", image: "mots.jpg" },
       { name: "Visite de ses lunes", image: "lunes.jpg" },
     ],
