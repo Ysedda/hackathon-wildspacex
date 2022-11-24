@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Text, Flex, Box } from "@chakra-ui/react";
+import { Text, Flex, Box, Image } from "@chakra-ui/react";
 import PlanetList from "../components/planet-list/PlanetList";
 import "./home.css";
 
@@ -82,6 +82,11 @@ const Home = () => {
   }, []);
   return (
     <div>
+      <Box className="bouncing-astronaut" position={"absolute"} top={"100vh"} left={"0"} height={"100vh"} w={"100%"} zIndex={"2"} overflowX={"hidden"}>
+        <Box>
+          <Image src="/assets/images/astronaut-640x640.png" />
+        </Box>
+      </Box>
       <Flex
         flexDirection="column"
         alignItems="center"
