@@ -116,8 +116,8 @@ const Home = () => {
         resetOnLeave
       >
         <MouseParallaxChild
-              factorX={-0.3}
-              factorY={0.3}
+              factorX={-0.1}
+              factorY={0.1}
               style={{
                 background:
                   "url('/images/galaxy-header-bg.png') no-repeat center center",
@@ -132,86 +132,87 @@ const Home = () => {
           flexDirection="column"
           alignItems="center"
           justifyContent="center"
-          h={"100vh"}
+          pt={"300px"}
+          pb={"100px"}
           w="100%"
         >
           <MouseParallaxChild
             className="decode-text"
-            factorX={0.5}
+            factorX={0.1}
             factorY={0.1}
           >
             <MouseParallaxChild
               className="text-animation"
-              factorX={0.6}
+              factorX={0.1}
               factorY={0.1}
             >
               W
             </MouseParallaxChild>
             <MouseParallaxChild
               className="text-animation"
-              factorX={0.6}
+              factorX={0.1}
               factorY={0.1}
             >
               i
             </MouseParallaxChild>
             <MouseParallaxChild
               className="text-animation"
-              factorX={0.6}
+              factorX={0.1}
               factorY={0.1}
             >
               l
             </MouseParallaxChild>
             <MouseParallaxChild
               className="text-animation"
-              factorX={0.6}
+              factorX={0.1}
               factorY={0.1}
             >
               d
             </MouseParallaxChild>
             <MouseParallaxChild
               className="text-animation"
-              factorX={0.6}
+              factorX={0.1}
               factorY={0.1}
             >
               S
             </MouseParallaxChild>
             <MouseParallaxChild
               className="text-animation"
-              factorX={0.6}
+              factorX={0.1}
               factorY={0.1}
             >
               p
             </MouseParallaxChild>
             <MouseParallaxChild
               className="text-animation"
-              factorX={0.6}
+              factorX={0.1}
               factorY={0.1}
             >
               a
             </MouseParallaxChild>
             <MouseParallaxChild
               className="text-animation"
-              factorX={0.6}
+              factorX={0.1}
               factorY={0.1}
             >
               c
             </MouseParallaxChild>
             <MouseParallaxChild
               className="text-animation"
-              factorX={0.6}
+              factorX={0.1}
               factorY={0.1}
             >
               e
             </MouseParallaxChild>
             <MouseParallaxChild
               className="text-animation"
-              factorX={0.6}
+              factorX={0.1}
               factorY={0.1}
             >
               X
             </MouseParallaxChild>
           </MouseParallaxChild>
-          <MouseParallaxChild factorX={-0.6} factorY={0.3}>
+          <MouseParallaxChild factorX={-0.3} factorY={0.3}>
             <Text
               fontSize="25px"
               marginBottom="40px"
