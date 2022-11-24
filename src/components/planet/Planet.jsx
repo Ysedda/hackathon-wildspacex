@@ -1,9 +1,9 @@
 import { Box, Image } from "@chakra-ui/react";
 
-const Planet = ({ image, direction }) => {
+const Planet = ({ image, size }) => {
   return (
-    <Box w="600px">
-      <Image src="https://cdn.mos.cms.futurecdn.net/RifjtkFLBEFgzkZqWEh69P.jpg" />
+    <Box w={size}>
+      <Image src={image} />
     </Box>
   );
 };
