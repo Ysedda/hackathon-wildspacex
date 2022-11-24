@@ -1,0 +1,161 @@
+.decode-text {
+    width: 100%;
+    font-size: 200px;
+    text-align: center;
+}
+
+.space {
+    display: inline-block;
+    width: 10px;
+}
+
+.text-animation {
+    margin: 0px;
+    display: inline-block;
+    position: relative;
+    color: transparent;
+}
+
+.text-animation:before {
+    content: '';
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: rgba(248, 248, 248);
+    opacity: 0.6;
+    width: 0;
+    height: 1.2em;
+    -webkit-transform: translate(-50%, -55%);
+    -ms-transform: translate(-50%, -55%);
+    transform: translate(-50%, -55%);
+}
+
+.text-animation.state-1:before {
+    width: 1px;
+}
+
+.text-animation.state-2:before {
+    width: 0.9em;
+}
+
+.text-animation.state-3 {
+    color: white;
+}
+
+.text-animation.state-3:before {
+    width: 0;
+}
+
+#refresh {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+}
+
+div {
+    font-family: 'Righteous';
+}
+
+body {
+    height: 100vh;
+    align-items: center;
+    display: flex;
+}
+
+.title-fade-in {
+    transition: fadeIn 4s;
+    -webkit-animation: fadeIn 4s;
+    -moz-animation: fadeIn 4s;
+    -o-animation: fadeIn 4s;
+    -ms-animation: fadeIn 4s;
+}
+
+.sub-border {
+    border: 1px solid #fff;
+    width: 1px;
+    animation: 3s slidein;
+    animation-delay: 2.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slidein {
+    0% {
+        transform: scaleX(1);
+    }
+
+    100% {
+        transform: scaleX(250);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    66% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    66% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    66% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    66% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    66% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
