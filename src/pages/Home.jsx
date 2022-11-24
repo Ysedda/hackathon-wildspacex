@@ -1,4 +1,5 @@
 import { Heading, Center, Text } from "@chakra-ui/react";
+import PlanetList from "../components/planet-list/PlanetList";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
         dolor ullam! Similique. Accusamus, aperiam cum aliquid dolorum molestiae
         provident possimus nihil est fugiat repellendus, necessitatibus dicta
       </Text>
+      <PlanetList />
     </div>
   );
 };
