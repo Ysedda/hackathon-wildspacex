@@ -9,7 +9,7 @@ import { extendTheme } from "@chakra-ui/react";
 const config = {
   useSystemColorMode: false,
   initialColorMode: "dark",
-}
+};
 
 const theme = extendTheme({
   config,
@@ -27,11 +27,9 @@ const theme = extendTheme({
 });
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <ChakraProvider theme={theme}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </ChakraProvider>
-  </React.StrictMode>
+  <ChakraProvider theme={theme}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </ChakraProvider>
 );

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import {
-  Image,
   Button,
   Modal,
   ModalBody,
@@ -13,6 +12,7 @@ import {
   Heading,
   Select,
 } from "@chakra-ui/react";
+import PlanetModel from "../planet-model/PlanetModel";
 
 const Travels = ({ destination }) => {
   const options = [
@@ -108,8 +108,7 @@ const Travels = ({ destination }) => {
                 );
               })}
             </Select>
-            <Image src={`images/${destination}.png`} w="20rem" />
-            <Image src={`images/${selectedOption.value}.png`} w="20rem" />
+            <PlanetModel planet={destination} size="200px" />
           </ModalBody>
           <ModalFooter>
             <Button onClick={onClose}>Retour au système solaire</Button>

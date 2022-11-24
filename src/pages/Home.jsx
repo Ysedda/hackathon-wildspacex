@@ -6,6 +6,7 @@ import {
   MouseParallaxContainer,
 } from "react-parallax-mouse";
 import PlanetList from "../components/planet-list/PlanetList";
+import PlanetModel from "../components/planet-model/PlanetModel";
 import "./home.css";
 
 
