@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Text, Flex, Box, Image } from "@chakra-ui/react";
 import PlanetList from "../components/planet-list/PlanetList";
+import PlanetModel from "../components/planet-model/PlanetModel";
 import "./home.css";
 
 const Home = () => {
