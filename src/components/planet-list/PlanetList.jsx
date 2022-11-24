@@ -16,8 +16,8 @@ const PlanetList = () => {
   const mercureScroll = useTransform(scrollY, [0, 700], [0, 300]);
 
   return (
-    <div>
-      <Box h="10000px" overflowX={"hidden"}>
+    <>
+      <Box h="10000px" overflowX={"hidden"} backgroundColor={"black"}>
         <motion.div style={{ y: terreScrollY, x: terreScrollX }}>
           <Box w="25%">
             <Planet />
@@ -28,43 +28,8 @@ const PlanetList = () => {
             <Planet />
           </Box>
         </motion.div>
-        {/*<motion.div style={{ y: terreScroll, x: terreScroll }}>
-    <Box w="25%">
-      <Planet />
-    </Box>
-  </motion.div>
-  <motion.div style={{ y: terreScroll, x: terreScroll }}>
-    <Box w="25%">
-      <Planet />
-    </Box>
-  </motion.div>
-  <motion.div style={{ y: terreScroll, x: terreScroll }}>
-    <Box w="25%">
-      <Planet />
-    </Box>
-  </motion.div>
-  <motion.div style={{ y: terreScroll, x: terreScroll }}>
-    <Box w="25%">
-      <Planet />
-    </Box>
-  </motion.div>
-  <motion.div style={{ y: terreScroll, x: terreScroll }}>
-    <Box w="25%">
-      <Planet />
-    </Box>
-  </motion.div>
-  <motion.div style={{ y: terreScroll, x: terreScroll }}>
-    <Box w="25%">
-      <Planet />
-    </Box>
-  </motion.div>
-  <motion.div style={{ y: terreScroll, x: terreScroll }}>
-    <Box w="25%">
-      <Planet />
-    </Box>
-  </motion.div> */}
       </Box>
-    </div>
+    </>
   );
 };
 
