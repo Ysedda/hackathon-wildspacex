@@ -4,6 +4,12 @@ import PlanetList from "../components/planet-list/PlanetList";
 import "./home.css";
 
 const Home = () => {
+  const homeStyle = {
+    backgroundImage: "url(/images/background.png)",
+    backgroundRepeat: "repeat",
+    backgroundSize: "40%",
+  };
+
   useEffect(() => {
     function decodeText() {
       var text = document.getElementsByClassName("decode-text")[0];
@@ -81,10 +87,19 @@ const Home = () => {
     decodeText();
   }, []);
   return (
-    <div>
-      <Box className="bouncing-astronaut" position={"absolute"} top={"100vh"} left={"0"} height={"100vh"} w={"100%"} zIndex={"2"} overflowX={"hidden"}>
+    <div style={homeStyle}>
+      <Box
+        className="bouncing-astronaut"
+        position={"absolute"}
+        top={"100vh"}
+        left={"0"}
+        height={"100vh"}
+        w={"100%"}
+        zIndex={"2"}
+        overflowX={"hidden"}
+      >
         <Box>
-          <Image src="/assets/images/astronaut-640x640.png" />
+          <Image src="/images/astronaut-640x640.png" />
         </Box>
       </Box>
       <Flex
