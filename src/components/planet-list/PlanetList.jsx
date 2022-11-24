@@ -4,10 +4,10 @@ import Planet from "../planet/Planet";
 
 const PlanetList = () => {
   const { scrollY } = useScroll();
-  const terreScrollX = useTransform(scrollY, [0, 550], ["-50%", "10%"]);
-  const terreScrollY = useTransform(scrollY, [0, 550], ["-0%", "100%"]);
-  const marsScrollX = useTransform(scrollY, [350, 900], ["100%", "60%"]);
-  const marsScrollY = useTransform(scrollY, [350, 900], ["0%", "100%"]);
+  const terreScrollX = useTransform(scrollY, [0, 500, 1000, 1500], ["-50%", "10%", "60%", "100%"]);
+  const terreScrollY = useTransform(scrollY, [0, 500, 1000 , 1500], ["-150%", "0%", "50%", "-0%"]);
+  const marsScrollX = useTransform(scrollY, [300, 800, 1300, 1800], ["200%", "100%", "-50%", "-100%"]);
+  const marsScrollY = useTransform(scrollY, [300, 800, 1300, 1800], ["-100%", "0%", "50%", "-500%"]);
   const venusScroll = useTransform(scrollY, [0, 700], [0, 300]);
   const saturnScroll = useTransform(scrollY, [0, 700], [0, 300]);
   const uranusScroll = useTransform(scrollY, [0, 700], [0, 300]);
