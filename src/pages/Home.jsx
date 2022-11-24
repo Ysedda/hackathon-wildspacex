@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import { Text, Flex, Box } from "@chakra-ui/react";
+import Citation from "../components/citation/Citation";
 import PlanetList from "../components/planet-list/PlanetList";
 import "./home.css";
+
 
 const Home = () => {
   useEffect(() => {
@@ -112,6 +114,7 @@ const Home = () => {
         <Box className="sub-border" marginTop="15px"></Box>
       </Flex>
       <PlanetList />
+      <Citation />
     </div>
   );
 };
