@@ -8,6 +8,12 @@ import PlanetList from "../components/planet-list/PlanetList";
 import "./home.css";
 
 const Home = () => {
+  const homeStyle = {
+    backgroundImage: "url(/images/background.png)",
+    backgroundRepeat: "repeat",
+    backgroundSize: "40%",
+  };
+
   useEffect(() => {
     function decodeText() {
       var text = document.getElementsByClassName("decode-text")[0];
@@ -86,7 +92,7 @@ const Home = () => {
   }, []);
 
   return (
-    <Box>
+    <div style={homeStyle}>
       <Box
         className="bouncing-astronaut"
         position={"absolute"}
@@ -112,9 +118,8 @@ const Home = () => {
               factorY={0.3}
               style={{
                 background:
-                  "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) ,url('/images/galaxy-header-bg.png') no-repeat center center",
+                  "url('/images/galaxy-header-bg.png') no-repeat center center",
                 position: "absolute",
-                zIndex: "-1",
                 backgroundPosition: "20% 30%",
                 backgroundRepeat: "no-repeat",
                 width: "100%",
@@ -219,7 +224,7 @@ const Home = () => {
         </Flex>
       </MouseParallaxContainer>
       <PlanetList />
-    </Box>
+    </div>
   );
 };
 
