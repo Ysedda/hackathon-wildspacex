@@ -1,5 +1,6 @@
-import { Heading, Center, Text, Flex, Box } from "@chakra-ui/react";
 import { useEffect } from "react";
+import { Text, Flex, Box } from "@chakra-ui/react";
+import PlanetList from "../components/planet-list/PlanetList";
 import "./home.css";
 
 const Home = () => {
@@ -86,7 +87,7 @@ const Home = () => {
         alignItems="center"
         justifyContent="center"
         h="100vh"
-        w="100vw"
+        w="100%"
         backgroundColor="black"
       >
         <div className="decode-text">
@@ -111,6 +112,7 @@ const Home = () => {
         </Text>
         <Box className="sub-border" marginTop="15px"></Box>
       </Flex>
+      <PlanetList />
     </div>
   );
 };
