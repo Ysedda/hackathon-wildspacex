@@ -1,5 +1,9 @@
 import { useEffect } from "react";
 import { Text, Flex, Box, Image } from "@chakra-ui/react";
+import {
+  MouseParallaxChild,
+  MouseParallaxContainer,
+} from "react-parallax-mouse";
 import PlanetList from "../components/planet-list/PlanetList";
 import "./home.css";
 
@@ -86,6 +90,7 @@ const Home = () => {
     // Demo only stuff
     decodeText();
   }, []);
+
   return (
     <div style={homeStyle}>
       <Box
@@ -102,35 +107,122 @@ const Home = () => {
           <Image src="/images/astronaut-640x640.png" />
         </Box>
       </Box>
-      <Flex
-        flexDirection="column"
-        alignItems="center"
-        justifyContent="center"
-        h="100vh"
-        w="100%"
+      <MouseParallaxContainer
+        className="parallax"
+        globalFactorX={0.3}
+        globalFactorY={0.3}
+        resetOnLeave
       >
-        <div className="decode-text">
-          <div className="text-animation">W</div>
-          <div className="text-animation">i</div>
-          <div className="text-animation">l</div>
-          <div className="text-animation">d</div>
-          <div className="text-animation">S</div>
-          <div className="text-animation">p</div>
-          <div className="text-animation">a</div>
-          <div className="text-animation">c</div>
-          <div className="text-animation">e</div>
-          <div className="text-animation">X</div>
-        </div>
-        <Text
-          fontSize="25px"
-          marginBottom="40px"
-          color="white"
-          className="title-fade-in"
+        <MouseParallaxChild
+              factorX={-0.3}
+              factorY={0.3}
+              style={{
+                background:
+                  "url('/images/galaxy-header-bg.png') no-repeat center center",
+                position: "absolute",
+                backgroundPosition: "20% 30%",
+                backgroundRepeat: "no-repeat",
+                width: "100%",
+                height: "100%",
+              }}
+          />
+        <Flex
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+          h={"100vh"}
+          w="100%"
         >
-          1ère agence de voyage touristique spatial en France
-        </Text>
-        <Box className="sub-border" marginTop="15px"></Box>
-      </Flex>
+          <MouseParallaxChild
+            className="decode-text"
+            factorX={0.5}
+            factorY={0.1}
+          >
+            <MouseParallaxChild
+              className="text-animation"
+              factorX={0.6}
+              factorY={0.1}
+            >
+              W
+            </MouseParallaxChild>
+            <MouseParallaxChild
+              className="text-animation"
+              factorX={0.6}
+              factorY={0.1}
+            >
+              i
+            </MouseParallaxChild>
+            <MouseParallaxChild
+              className="text-animation"
+              factorX={0.6}
+              factorY={0.1}
+            >
+              l
+            </MouseParallaxChild>
+            <MouseParallaxChild
+              className="text-animation"
+              factorX={0.6}
+              factorY={0.1}
+            >
+              d
+            </MouseParallaxChild>
+            <MouseParallaxChild
+              className="text-animation"
+              factorX={0.6}
+              factorY={0.1}
+            >
+              S
+            </MouseParallaxChild>
+            <MouseParallaxChild
+              className="text-animation"
+              factorX={0.6}
+              factorY={0.1}
+            >
+              p
+            </MouseParallaxChild>
+            <MouseParallaxChild
+              className="text-animation"
+              factorX={0.6}
+              factorY={0.1}
+            >
+              a
+            </MouseParallaxChild>
+            <MouseParallaxChild
+              className="text-animation"
+              factorX={0.6}
+              factorY={0.1}
+            >
+              c
+            </MouseParallaxChild>
+            <MouseParallaxChild
+              className="text-animation"
+              factorX={0.6}
+              factorY={0.1}
+            >
+              e
+            </MouseParallaxChild>
+            <MouseParallaxChild
+              className="text-animation"
+              factorX={0.6}
+              factorY={0.1}
+            >
+              X
+            </MouseParallaxChild>
+          </MouseParallaxChild>
+          <MouseParallaxChild factorX={-0.6} factorY={0.3}>
+            <Text
+              fontSize="25px"
+              marginBottom="40px"
+              color="white"
+              className="title-fade-in"
+            >
+              1ère agence de voyage touristique spatial en France
+            </Text>
+          </MouseParallaxChild>
+
+          <Box className="sub-border" marginTop="15px"></Box>
+        </Flex>
+      </MouseParallaxContainer>
       <PlanetList />
     </div>
   );
