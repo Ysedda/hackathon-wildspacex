@@ -62,7 +62,7 @@ const PlanetsModel = ({ planet, size }) => {
 
       const scene = new THREE.Scene();
       let scale = 100;
-      if (planet === "default") scale /= 98;
+      if (planet === "terre") scale /= 2.3;
       if (planet === "uranus") scale *= 443;
       if (planet === "saturne") scale *= 1.95;
       if (planet === "soleil") scale /= 1900;
