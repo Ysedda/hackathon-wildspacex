@@ -35,7 +35,16 @@ const Travels = ({ destination }) => {
 
   return (
     <>
-      <Button onClick={() => onOpen()} key="full" m={4} zIndex="3">
+      <Button
+        onClick={() => onOpen()}
+        key="full"
+        m={4}
+        zIndex="3"
+        bgColor="#084674"
+        color="#fff"
+        fontWeight="100"
+        _hover={{ color: "#000", bgColor: "#358dce" }}
+      >
         Voir les voyages
       </Button>
 
@@ -45,7 +54,7 @@ const Travels = ({ destination }) => {
           <ModalHeader m="2rem auto auto auto" color="#fff">
             Voyages vers {destination}
           </ModalHeader>
-          <ModalCloseButton m="2rem 2rem auto auto" />
+          <ModalCloseButton m="2rem 2rem auto auto" color="#fff" />
           <ModalBody>
             <Heading
               m="auto"
