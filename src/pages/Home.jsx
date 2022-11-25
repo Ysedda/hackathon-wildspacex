@@ -8,6 +8,7 @@ import {
 import PlanetList from "../components/planet-list/PlanetList";
 import PlanetModel from "../components/planet-model/PlanetModel";
 import "./home.css";
+import PlanetDetails from "../components/planet-details/PlanetDetails";
 
 
 const Home = () => {
