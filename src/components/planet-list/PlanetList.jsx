@@ -13,8 +13,7 @@ const PlanetList = () => {
 
 
   useEffect(() => {
-    return scrollY.onChange((latest) => {
-      console.log("Page scroll: ", latest)
+    return scrollY.onChange(() => {
         setOpenDetails(false);
     })
   }, []);

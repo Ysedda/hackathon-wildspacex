@@ -14,7 +14,6 @@ const PlanetDetails = ({ planet, currentScale }) => {
   useEffect(() => {
     if (currentScale && calculScale === 1) {
       const dif = 1 / parseFloat(currentScale);
-      console.log((1+dif)/2);
       setCalculScale((1+dif)/2);
     }
   }, []);
