@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {
   Button,
+  Image,
   Box,
   Modal,
   ModalBody,
@@ -21,7 +22,7 @@ import {
   Td,
   TableCaption,
   TableContainer,
-  Flex
+  Flex,
 } from "@chakra-ui/react";
 import PlanetModel from "../planet-model/PlanetModel";
 import { planets } from "../../assets/planets";
@@ -34,7 +35,7 @@ const Travels = ({ destination }) => {
 
   return (
     <>
-      <Button onClick={() => onOpen()} key="full" m={4} zIndex='3'>
+      <Button onClick={() => onOpen()} key="full" m={4} zIndex="3">
         Voir les voyages
       </Button>
 
@@ -86,12 +87,11 @@ const Travels = ({ destination }) => {
             >
               {start !== null ? (
                 start === "default" ? (
-                  <PlanetModel
-                    planet={start
-                      .normalize("NFD")
-                      .replace(/\p{Diacritic}/gu, "")
-                      .toLowerCase()}
-                    size="100px"
+                  <Image
+                    src="/images/interrogation.png"
+                    w="200px"
+                    bgColor="#fff"
+                    borderRadius="100%"
                   />
                 ) : (
                   <PlanetModel
@@ -162,7 +162,11 @@ const Travels = ({ destination }) => {
                         <Th>Rebours</Th>
                         <Th>Départ</Th>
                         <Th>Arrivée</Th>
-                        <Th><Button w='96px' rightIcon={<FaRocket />}>Go</Button></Th>
+                        <Th>
+                          <Button w="96px" rightIcon={<FaRocket />}>
+                            Go
+                          </Button>
+                        </Th>
                       </Tr>
                     </Tfoot>
                   </Table>
