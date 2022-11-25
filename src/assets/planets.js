@@ -12,9 +12,7 @@ export const planets = [
   {
     name: "Mercure",
     image: "mercure.png",
-    activities: [
-      { name: "Usine de pansement", image: "images/mercure.jpg" },
-    ],
+    activities: [{ name: "Usine de pansement", image: "images/mercure.jpg" }],
     destinations: [
       {
         planet: "Soleil",
@@ -45,6 +43,11 @@ export const planets = [
         planet: "Terre",
         dateLaunch: "2022-12-01T11:00:00",
         dateArrival: "2022-12-03T22:00:00",
+      },
+      {
+        planet: "Terre",
+        dateLaunch: "2022-12-08T08:00:00",
+        dateArrival: "2022-12-15T20:00:00",
       },
       {
         planet: "Mars",
@@ -373,7 +376,10 @@ export const planets = [
     name: "Jupiter",
     image: "jupiter.png",
     activities: [
-      { name: "Visite guidée avec M.Channing Tatum", image: "images/jupiter.jpg" },
+      {
+        name: "Visite guidée avec M.Channing Tatum",
+        image: "images/jupiter.jpg",
+      },
       { name: "Chasseur de tornade", image: "images/tornade.jpeg" },
     ],
     destinations: [
@@ -465,7 +471,10 @@ export const planets = [
     activities: [
       { name: "Kart sur les anneaux", image: "images/kart.jpeg" },
       { name: "Visite des lunes", image: "images/lune.jpg" },
-      { name: "Trou de ver de Nolan", image: "images/interstellar-trou-noir.webp" },
+      {
+        name: "Trou de ver de Nolan",
+        image: "images/interstellar-trou-noir.webp",
+      },
     ],
     destinations: [
       {
