@@ -96,7 +96,6 @@ const Home = () => {
 
   return (
     <div style={homeStyle}>
-      <PlanetDetails />
       <Box
         className="bouncing-astronaut"
         position={"absolute"}
