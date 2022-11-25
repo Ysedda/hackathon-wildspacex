@@ -56,7 +56,6 @@ const PlanetsModel = ({ planet, size }) => {
       });
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(scW, scH);
-      console.log(scW, scH);
       renderer.outputEncoding = THREE.sRGBEncoding;
       container.appendChild(renderer.domElement);
       setRenderer(renderer);
@@ -123,7 +122,7 @@ const PlanetsModel = ({ planet, size }) => {
 
   return (
     <div
-      style={{ height: size, width: size/0.8, position: "relative" }}
+      style={{ height: size, width: size, position: "relative" }}
       ref={refContainer}
     >
       {loading && (
