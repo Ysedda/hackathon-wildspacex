@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {
   Button,
+  Box,
   Modal,
   ModalBody,
   ModalFooter,
@@ -11,58 +12,21 @@ import {
   useDisclosure,
   Heading,
   Select,
+  Table,
+  Thead,
+  Tbody,
+  Tfoot,
+  Tr,
+  Th,
+  Td,
+  TableCaption,
+  TableContainer,
 } from "@chakra-ui/react";
 import PlanetModel from "../planet-model/PlanetModel";
+import { planets } from "../../assets/planets";
 
 const Travels = ({ destination }) => {
-  const options = [
-    {
-      id: 1,
-      value: "soleil",
-      name: "Soleil",
-    },
-    {
-      id: 2,
-      value: "mercure",
-      name: "Mercure",
-    },
-    {
-      id: 3,
-      value: "venus",
-      name: "Vénus",
-    },
-    {
-      id: 4,
-      value: "terre",
-      name: "Terre",
-    },
-    {
-      id: 5,
-      value: "mars",
-      name: "Mars",
-    },
-    {
-      id: 6,
-      value: "jupiter",
-      name: "Jupiter",
-    },
-    {
-      id: 7,
-      value: "saturne",
-      name: "Saturne",
-    },
-    {
-      id: 8,
-      value: "uranus",
-      name: "Uranus",
-    },
-    {
-      id: 9,
-      value: "neptune",
-      name: "Neptune",
-    },
-  ];
-  const [selectedOption, setSelectedOption] = useState("");
+  const [start, setStart] = useState("default");
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -73,8 +37,8 @@ const Travels = ({ destination }) => {
 
       <Modal onClose={onClose} size="full" isOpen={isOpen}>
         <ModalOverlay />
-        <ModalContent>
-          <ModalHeader m="2rem auto auto auto">
+        <ModalContent bgColor="#111">
+          <ModalHeader m="2rem auto auto auto" color="#fff">
             Voyages vers {destination}
           </ModalHeader>
           <ModalCloseButton m="2rem 2rem auto auto" />
@@ -82,6 +46,7 @@ const Travels = ({ destination }) => {
             <Heading
               m="auto"
               fontSize="1.5rem"
+              color="#fff"
               fontFamily="inherit"
               textAlign="center"
             >
@@ -91,24 +56,114 @@ const Travels = ({ destination }) => {
               placeholder="Sélectionner..."
               w="500px"
               m="1rem auto"
+              color="#000"
+              bgColor="var(--chakra-colors-gray-100)"
               onChange={(e) => {
-                setSelectedOption(e.target.value);
+                setStart(e.target.value);
               }}
-              value={selectedOption}
+              name="select-start"
+              value={start}
             >
-              {options.map((option) => {
-                option.id === selectedOption.id ? (
-                  <option key={option.id} value={option} selected>
-                    {option.name}
+              {planets
+                .filter(
+                  (planet) =>
+                    planet.name !== destination && planet.name !== "Soleil"
+                )
+                .map((planet, index) => (
+                  <option key={index} value={planet.name}>
+                    {planet.name}
                   </option>
-                ) : (
-                  <option key={option.id} value={option}>
-                    {option.name}
-                  </option>
-                );
-              })}
+                ))}
             </Select>
-            <PlanetModel planet={destination} size="200px" />
+            <Box
+              display="flex"
+              alignItems="center"
+              justifyContent="space-evenly"
+              m="3rem auto"
+            >
+              {start !== null ? (
+                start === "default" ? (
+                  <PlanetModel
+                    planet={start
+                      .normalize("NFD")
+                      .replace(/\p{Diacritic}/gu, "")
+                      .toLowerCase()}
+                    size="100px"
+                  />
+                ) : (
+                  <PlanetModel
+                    planet={start
+                      .normalize("NFD")
+                      .replace(/\p{Diacritic}/gu, "")
+                      .toLowerCase()}
+                    size="200px"
+                  />
+                )
+              ) : null}
+              <PlanetModel
+                planet={destination
+                  .normalize("NFD")
+                  .replace(/\p{Diacritic}/gu, "")
+                  .toLowerCase()}
+                size="200px"
+              />
+            </Box>
+
+            {start !== null && start !== "default" ? (
+              <>
+                {destination === "Soleil" ? (
+                  <Box color="#fff">
+                    Nous rappelons aux voyageurs qu'il n'y a pas d'arrêt au
+                    Soleil mais seulement un tour de l'astre. Le vaisseau
+                    reviendra sur la même planète après avoir fait le tour de
+                    notre étoile. Merci pour votre compréhension.
+                  </Box>
+                ) : null}
+                <TableContainer>
+                  <Table>
+                    <Thead>
+                      <Tr>
+                        <Th>Rebours</Th>
+                        <Th>Départ</Th>
+                        <Th>Arrivée</Th>
+                        <Th>Réserver</Th>
+                      </Tr>
+                    </Thead>
+                    <Tbody>
+                      {planets
+                        .filter((planet) => planet.name === start)
+                        .map((planet) => {
+                          console.log("start", planet);
+                          planet.destinations
+                            .filter(
+                              (destinationFilter) =>
+                                destinationFilter.planet === destination
+                            )
+                            .map((destinationMap) => {
+                              console.log("destination", planet);
+                              <Tr>
+                                <Td></Td>
+                                <Td>{destinationMap.dateLaunch}</Td>
+                                <Td>{destinationMap.dateArrival}</Td>
+                                <Td>
+                                  <Button>Go</Button>
+                                </Td>
+                              </Tr>;
+                            });
+                        })}
+                    </Tbody>
+                    <Tfoot>
+                      <Tr>
+                        <Th>Rebours</Th>
+                        <Th>Départ</Th>
+                        <Th>Arrivée</Th>
+                        <Th>Réserver</Th>
+                      </Tr>
+                    </Tfoot>
+                  </Table>
+                </TableContainer>
+              </>
+            ) : null}
           </ModalBody>
           <ModalFooter>
             <Button onClick={onClose}>Retour au système solaire</Button>
