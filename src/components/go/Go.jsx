@@ -17,9 +17,9 @@ const Go = () => {
     <ModalCloseButton />
     <ModalBody>
       <Text m='10px'>Merci de l'intérêt que vous portez à notre entreprise.</Text>
-      <Text m='10px'>Malheureusment, nos voyages sont exclusivement résérvés à une clientèle d'élite aux revenus plus que confortables.</Text>
-      <Text m='10px'>De ce fait, il vous est impossible de passer une réservation en ligne, un paiement en carte bleue n'étant pas possible.</Text>
-      <Text m='10px' mb='20px'>Toutefois, si vous êtes intéréssés et possédez les moyens, merci de nous contacter directement :</Text>
+      <Text m='10px'>Malheureusment, nos voyages sont exclusivement réservés à une clientèle d'élite aux revenus plus que confortables.</Text>
+      <Text m='10px'>De ce fait, il vous est impossible de procéder à une réservation en ligne</Text>
+      <Text m='10px' mb='20px'>Toutefois, si vous êtes intéressés et possédez les moyens, merci de nous contacter directement :</Text>
       <Text mx='10px'>06 33 29 17 70</Text>
       <Text mx='10px'>wildspaceX@wildcodeschool.com</Text>
     </ModalBody>
