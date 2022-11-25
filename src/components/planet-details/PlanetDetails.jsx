@@ -2,6 +2,9 @@ import { Heading, Image, Text, Flex } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import "./planet-details.css";
 import { planets } from "../../assets/planets";
+import { TbArrowsDiagonal } from "react-icons/tb";
+import { TiThermometer } from "react-icons/ti";
+import { GiWeight } from "react-icons/gi";
 
 const PlanetDetails = (planet) => {
   const [planetName, setPlanetName] = useState("");
@@ -65,13 +68,18 @@ const PlanetDetails = (planet) => {
           <div className="card-info-wrapper">
             <Flex className="card-info" flexDirection={"column"}>
               <div className="card-info-title">
-                <Text color="whiteAlpha.600">{planetRadius} km de rayon</Text>
+                <Flex alignItems='center' gap='10px'><TbArrowsDiagonal color="white" opacity='0.6' size={'20px'}/><Text color="whiteAlpha.600">{planetRadius} km de rayon</Text></Flex>
+                <Flex alignItems='center' gap='10px'><TiThermometer color="white" opacity='0.6' size={'20px'}/>
+                
                 <Text color="whiteAlpha.600">
                   {planetTemperature - 273} degrés °C
                 </Text>
+                </Flex>
+                <Flex alignItems='center' gap='10px'><GiWeight color="white" opacity='0.6' size={'20px'}/>
                 <Text color="whiteAlpha.600">
                   {(planetGravity / 9.81).toFixed(1)}x la gravité terreste
                 </Text>
+                </Flex>
                 <Heading
                   as="h1"
                   color="white"
