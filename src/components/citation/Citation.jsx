@@ -5,8 +5,7 @@ const Citation = () => {
     <Box
       display="flex"
       justifyContent="space-between"
-      m={5}
-    >
+      >
       <Card maxW='sm'>
         <CardBody>
           <Image
