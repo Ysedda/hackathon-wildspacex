@@ -13,7 +13,7 @@ const Go = () => {
 <Modal isOpen={isOpen} onClose={onClose} isCentered size='xl'>
   <ModalOverlay />
   <ModalContent backgroundColor={'gray.700'} color='white'>
-    <ModalHeader as='h1' fontSize={'xl'} textAlign='center'>Attention</ModalHeader>
+    <ModalHeader as='h1' fontSize={'4xl'} textAlign='center'>Attention</ModalHeader>
     <ModalCloseButton />
     <ModalBody>
       <Text m='10px'>Merci de l'intérêt que vous portez à notre entreprise.</Text>
