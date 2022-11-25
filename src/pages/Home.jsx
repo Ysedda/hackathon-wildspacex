@@ -120,7 +120,7 @@ const Home = () => {
       <Box
         className="bouncing-astronaut"
         position={"absolute"}
-        top={"300vh"}
+        top={"270vh"}
         left={"0"}
         height={"100vh"}
         w={"100%"}
@@ -136,7 +136,7 @@ const Home = () => {
       <Box
         className="bouncing-astronaut"
         position={"absolute"}
-        top={"500vh"}
+        top={"120vh"}
         left={"0"}
         height={"100vh"}
         w={"100%"}
@@ -152,7 +152,7 @@ const Home = () => {
       <Box
         className="bouncing-astronaut"
         position={"absolute"}
-        top={"120vh"}
+        top={"280vh"}
         left={"0"}
         height={"100vh"}
         w={"100%"}
@@ -168,7 +168,7 @@ const Home = () => {
       <Box
         className="bouncing-astronaut"
         position={"absolute"}
-        top={"150vh"}
+        top={"250vh"}
         left={"0"}
         height={"100vh"}
         w={"100%"}
@@ -184,7 +184,7 @@ const Home = () => {
       <Box
         className="bouncing-astronaut"
         position={"absolute"}
-        top={"100vh"}
+        top={"270vh"}
         left={"0"}
         height={"200vh"}
         w={"100%"}
@@ -200,7 +200,7 @@ const Home = () => {
       <Box
         className="bouncing-astronaut"
         position={"absolute"}
-        top={"100vh"}
+        top={"200vh"}
         left={"0"}
         height={"100vh"}
         w={"100%"}
@@ -216,7 +216,7 @@ const Home = () => {
       <Box
         className="bouncing-astronaut"
         position={"absolute"}
-        top={"150vh"}
+        top={"250vh"}
         left={"0"}
         height={"100vh"}
         w={"100%"}
@@ -232,7 +232,7 @@ const Home = () => {
       <Box
         className="bouncing-astronaut"
         position={"absolute"}
-        top={"190vh"}
+        top={"280vh"}
         left={"0"}
         height={"100vh"}
         w={"100%"}
@@ -248,7 +248,7 @@ const Home = () => {
       <Box
         className="bouncing-astronaut"
         position={"absolute"}
-        top={"200vh"}
+        top={"100vh"}
         left={"0"}
         height={"100vh"}
         w={"100%"}
@@ -280,7 +280,7 @@ const Home = () => {
       <Box
         className="bouncing-astronaut"
         position={"absolute"}
-        top={"530vh"}
+        top={"130vh"}
         left={"0"}
         height={"100vh"}
         w={"100%"}
@@ -296,7 +296,7 @@ const Home = () => {
       <Box
         className="bouncing-astronaut"
         position={"absolute"}
-        top={"630vh"}
+        top={"270vh"}
         left={"0"}
         height={"100vh"}
         w={"100%"}
@@ -312,7 +312,7 @@ const Home = () => {
       <Box
         className="bouncing-astronaut"
         position={"absolute"}
-        top={"1030vh"}
+        top={"130vh"}
         left={"0"}
         height={"100vh"}
         w={"100%"}
@@ -328,7 +328,7 @@ const Home = () => {
       <Box
         className="bouncing-astronaut"
         position={"absolute"}
-        top={"1060vh"}
+        top={"160vh"}
         left={"0"}
         height={"100vh"}
         w={"100%"}
@@ -344,7 +344,7 @@ const Home = () => {
       <Box
         className="bouncing-astronaut"
         position={"absolute"}
-        top={"1500vh"}
+        top={"200vh"}
         left={"0"}
         height={"100vh"}
         w={"100%"}
@@ -360,7 +360,7 @@ const Home = () => {
       <Box
         className="bouncing-astronaut"
         position={"absolute"}
-        top={"1900vh"}
+        top={"130vh"}
         left={"0"}
         height={"100vh"}
         w={"100%"}
