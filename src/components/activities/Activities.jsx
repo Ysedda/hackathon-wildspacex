@@ -50,17 +50,15 @@ const Activities = ({ planetName }) => {
           <ModalCloseButton m="2rem 2rem auto auto" color="#fff" />
           <ModalBody display="flex" justifyContent="space-around">
             {myPlanet &&
-              Object.values(myPlanetActivities).map((activity, index) => 
-                <Card size="xl"
-                marginBlockStart="5rem"
-                key={index}>
+              Object.values(myPlanetActivities).map((activity, index) => (
+                <Card size="xl" marginBlockStart="5rem" key={index}>
                   <CardBody>
                     <Image
                       src={activity.image}
                       alt={activity.name}
-                      borderRadius='lg'
+                      borderRadius="lg"
                       backgroundPosition="cover"
-                      h='400px'
+                      h="400px"
                       w="600px"
                     />
                     <Stack mt="6" spacing="3">
