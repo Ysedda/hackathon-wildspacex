@@ -86,19 +86,29 @@ const PlanetDetails = ({ planet, currentScale, originScale }) => {
                   <TbArrowsDiagonal color="white" opacity="0.6" size={"20px"} />
                   <Text color="whiteAlpha.600">{planetRadius} km de rayon</Text>
                 </Flex>
-                <Flex alignItems="center" gap="10px">
-                  <TiThermometer color="white" opacity="0.6" size={"20px"} />
+                {planetName !== "Soleil" && (
+                  <>
+                    <Flex alignItems="center" gap="10px">
+                      <TiThermometer
+                        color="white"
+                        opacity="0.6"
+                        size={"20px"}
+                      />
 
-                  <Text color="whiteAlpha.600">
-                    {planetTemperature - 273} degrés °C
-                  </Text>
-                </Flex>
-                <Flex alignItems="center" gap="10px">
-                  <GiWeight color="white" opacity="0.6" size={"20px"} />
-                  <Text color="whiteAlpha.600">
-                    {(planetGravity / 9.81).toFixed(1)}x la gravité terrestre
-                  </Text>
-                </Flex>
+                      <Text color="whiteAlpha.600">
+                        {planetTemperature - 273} degrés °C
+                      </Text>
+                    </Flex>
+                    <Flex alignItems="center" gap="10px">
+                      <GiWeight color="white" opacity="0.6" size={"20px"} />
+                      <Text color="whiteAlpha.600">
+                        {(planetGravity / 9.81).toFixed(1)}x la gravité
+                        terrestre
+                      </Text>
+                    </Flex>
+                  </>
+                )}
+
                 {/* <Heading
                   as="h1"
                   color="white"
