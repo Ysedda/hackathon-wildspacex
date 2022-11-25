@@ -7,6 +7,7 @@ import {
 } from "react-parallax-mouse";
 import PlanetList from "../components/planet-list/PlanetList";
 import "./home.css";
+import PlanetDetails from "../components/planet-details/PlanetDetails";
 
 
 const Home = () => {
@@ -95,6 +96,7 @@ const Home = () => {
 
   return (
     <div style={homeStyle}>
+      <PlanetDetails />
       <Box
         className="bouncing-astronaut"
         position={"absolute"}
