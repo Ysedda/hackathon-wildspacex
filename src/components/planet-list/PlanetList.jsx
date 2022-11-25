@@ -6,6 +6,8 @@ import Activities from "../activities/Activities";
 import Travels from "../travels/Travels";
 import { useEffect } from "react";
 
+import "./planetList.css";
+
 const PlanetList = () => {
   const { scrollY } = useScroll();
 
@@ -19,7 +21,7 @@ const PlanetList = () => {
   const mercuryScrollY = useTransform(
     scrollY,
     [420, 750, 1000],
-    ["-100%", "50%", "-100%"]
+    ["-100%", "20%", "-100%"]
   );
   const mercuryScale = useTransform(
     scrollY,
@@ -35,7 +37,7 @@ const PlanetList = () => {
   const venusScrollY = useTransform(
     scrollY,
     [845, 1000, 1500],
-    ["-100%", "50%", "-200%"]
+    ["-100%", "18%", "-200%"]
   );
   const venusScale = useTransform(
     scrollY,
@@ -51,7 +53,7 @@ const PlanetList = () => {
   const terreScrollY = useTransform(
     scrollY,
     [900, 1448, 2500],
-    ["-100%", "50%", "-100%"]
+    ["-100%", "10%", "-100%"]
   );
   const terreScale = useTransform(
     scrollY,
@@ -83,7 +85,7 @@ const PlanetList = () => {
   const jupiterScrollY = useTransform(
     scrollY,
     [1900, 2200, 2500],
-    ["-100%", "20%", "-100%"]
+    ["-100%", "-15%", "-100%"]
   );
   const jupiterScale = useTransform(
     scrollY,
@@ -98,28 +100,28 @@ const PlanetList = () => {
   );
   const saturneScrollY = useTransform(
     scrollY,
-    [2380, 2450, 2700],
-    ["-100%", "-50%", "-150%"]
+    [2380, 2450, 2600],
+    ["-100%", "-100%", "-150%"]
   );
   const saturneScale = useTransform(
     scrollY,
-    [2300, 2450, 2800],
+    [2300, 2600, 2800],
     ["0.2", "2", "0.4"]
   );
 
   const uranusScrollX = useTransform(
     scrollY,
-    [2600, 2900, 3200],
+    [2500, 2800, 3200],
     ["-100%", "50%", "70%"]
   );
   const uranusScrollY = useTransform(
     scrollY,
-    [2600, 2900, 3200],
-    ["-100%", "20%", "-100%"]
+    [2500, 2700, 3200],
+    ["-200%", "-120%", "-200%"]
   );
   const uranusScale = useTransform(
     scrollY,
-    [2600, 2750, 3200],
+    [2500, 2750, 3200],
     ["0.2", "1", "0.4"]
   );
 
@@ -131,11 +133,11 @@ const PlanetList = () => {
   const neptuneScrollY = useTransform(
     scrollY,
     [3074, 3180, 3400],
-    ["-100%", "0%", "-100%"]
+    ["-200%", "-100%", "-100%"]
   );
   const neptuneScale = useTransform(
     scrollY,
-    [3074, 3150, 3300],
+    [3074, 3180, 3300],
     ["0.2", "1", "0.4"]
   );
 
@@ -149,10 +151,10 @@ const PlanetList = () => {
     <>
       <Box h="3900px" overflowX={"hidden"}>
         <Center>
-          <Flex w="500px" direction={"column"}>
+          <Flex w="400px" direction={"column"}>
             <motion.div style={{ y: soleilY }}>
               {/* <Planet image="/images/soleil.png" /> */}
-              <PlanetModel planet="soleil" size="200px" />
+              <PlanetModel planet="soleil" size="400px" />
               <Center>
                 <Text color={"white"} fontSize={"3rem"}>
                   Soleil
@@ -167,7 +169,7 @@ const PlanetList = () => {
         >
           <Flex w="300px" direction={"column"}>
             {/* <Planet image="/images/mercure.png" /> */}
-            <PlanetModel planet="mercure" size="200px" />
+            <PlanetModel planet="mercure" size="300px" />
             <Center>
               <Text color={"white"} fontSize={"3rem"}>
                 Mercure
@@ -180,7 +182,7 @@ const PlanetList = () => {
         >
           <Flex w="300px" direction={"column"}>
             {/* <Planet image="/images/venus.png" /> */}
-            <PlanetModel planet="venus" size="200px" />
+            <PlanetModel planet="venus" size="300px" />
             <Center>
               <Text color={"white"} fontSize={"3rem"}>
                 Venus
@@ -193,7 +195,7 @@ const PlanetList = () => {
         >
           <Flex w="300px" direction={"column"}>
             {/* <Planet image="/images/terre.png" /> */}
-            <PlanetModel planet="terre" size="200px" />
+            <PlanetModel planet="terre" size="300px" />
             <Center>
               <Text color={"white"} fontSize={"3rem"}>
                 Terre
@@ -206,7 +208,7 @@ const PlanetList = () => {
         >
           <Flex w="300px" direction={"column"}>
             {/* <Planet image="/images/mars.png" /> */}
-            <PlanetModel planet="mars" size="200px" />
+            <PlanetModel planet="mars" size="300px" />
             <Center>
               <Text color={"white"} fontSize={"3rem"}>
                 Mars
@@ -219,7 +221,7 @@ const PlanetList = () => {
         >
           <Flex w="500px" direction={"column"}>
             {/* <Planet image="/images/jupiter.png" /> */}
-            <PlanetModel planet="jupiter" size="200px" />
+            <PlanetModel planet="jupiter" size="500px" />
             <Center>
               <Text color={"white"} fontSize={"3rem"}>
                 Jupiter
@@ -230,12 +232,12 @@ const PlanetList = () => {
         <motion.div
           style={{ y: saturneScrollY, x: saturneScrollX, scale: saturneScale }}
         >
-          <Flex w="300px" direction={"column"}>
+          <Flex w="400px" direction={"column"}>
             {/* <Planet image="/images/saturne.png" /> */}
-            <PlanetModel planet="saturne" size="200px" />
+            <PlanetModel planet="saturne" size="400px" />
             <Center>
               <Text color={"white"} fontSize={"2rem"}>
-                Jupiter
+                Saturne
               </Text>
             </Center>
           </Flex>
@@ -245,7 +247,7 @@ const PlanetList = () => {
         >
           <Flex w="300px" direction={"column"}>
             {/* <Planet image="/images/uranus.png" /> */}
-            <PlanetModel planet="uranus" size="200px" />
+            <PlanetModel planet="uranus" size="300px" />
             <Center>
               <Text color={"white"} fontSize={"2rem"}>
                 Uranus
@@ -258,7 +260,7 @@ const PlanetList = () => {
         >
           <Flex w="300px" direction={"column"}>
             {/* <Planet image="/images/neptune.png" /> */}
-            <PlanetModel planet="neptune" size="200px" />
+            <PlanetModel planet="neptune" size="300px" />
             <Center>
               <Text color={"white"} fontSize={"2rem"}>
                 Neptune
