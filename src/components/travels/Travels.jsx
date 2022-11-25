@@ -27,8 +27,8 @@ import {
 } from "@chakra-ui/react";
 import PlanetModel from "../planet-model/PlanetModel";
 import { planets } from "../../assets/planets";
-import { FaMonument, FaRocket } from "react-icons/fa";
 import { useEffect } from "react";
+import Go from "../go/Go";
 
 const Travels = ({ destination }) => {
 
@@ -160,9 +160,7 @@ const Travels = ({ destination }) => {
                                     <Td color='white'>{destinationMap.dateLaunch}</Td>
                                     <Td color='white'>{destinationMap.dateArrival}</Td>
                                     <Td>
-                                      <Button w="96px" rightIcon={<FaRocket />}>
-                                        Go
-                                      </Button>
+                                      <Go />
                                     </Td>
                                   </Tr>
                                 );
