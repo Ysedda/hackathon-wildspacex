@@ -249,13 +249,13 @@ export const planets = [
       },
       {
         planet: "Saturne",
-        dateLaunch: "2022-11-28T08:00:00",
-        dateArrival: "2022-12-17T18:00:00",
+        dateLaunch: "2022-11-28 08:00",
+        dateArrival: "2022-11-28 18:00",
       },
       {
         planet: "Saturne",
-        dateLaunch: "2022-12-05T16:00:00",
-        dateArrival: "2022-12-16T03:00:00",
+        dateLaunch: "2022-12-05 16:00",
+        dateArrival: "2022-12-06 03:00",
       },
       {
         planet: "Uranus",

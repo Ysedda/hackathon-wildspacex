@@ -54,16 +54,17 @@ const Activities = ({ planetName }) => {
           >
             {myPlanet &&
               Object.values(myPlanetActivities).map((activity, index) => 
-                <Card w="500px"
-                h="500px"
+                <Card size="xl"
+                marginBlockStart="5rem"
                 key={index}>
                   <CardBody>
                     <Image
                       src={activity.image}
                       alt={activity.name}
                       borderRadius='lg'
-                      w="xl"
-                      minH="60%"
+                      backgroundPosition="cover"
+                      h='400px'
+                      w="600px"
                     />
                     <Stack mt='6' spacing='3'>
                       <Divider />
