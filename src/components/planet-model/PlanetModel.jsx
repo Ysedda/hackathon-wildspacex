@@ -125,7 +125,23 @@ const PlanetsModel = ({ planet, size }) => {
     }
   }, []);
 
-  return (
+  return planet === "rocket" ? (
+    <div
+      style={{
+        height: size,
+        width: size,
+        position: "relative",
+        transform: "rotate(90deg)",
+      }}
+      ref={refContainer}
+    >
+      {loading && (
+        <span style={{ position: "absolute", left: "50%", top: "50%" }}>
+          Loading...
+        </span>
+      )}
+    </div>
+  ) : (
     <div
       style={{ height: size, width: size, position: "relative" }}
       ref={refContainer}
