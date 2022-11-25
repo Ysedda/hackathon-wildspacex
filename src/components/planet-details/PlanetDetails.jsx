@@ -97,7 +97,7 @@ const PlanetDetails = ({ planet, currentScale }) => {
                 <Flex alignItems="center" gap="10px">
                   <GiWeight color="white" opacity="0.6" size={"20px"} />
                   <Text color="whiteAlpha.600">
-                    {(planetGravity / 9.81).toFixed(1)}x la gravité terreste
+                    {(planetGravity / 9.81).toFixed(1)}x la gravité terrestre
                   </Text>
                 </Flex>
                 {/* <Heading

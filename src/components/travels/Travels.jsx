@@ -21,9 +21,11 @@ import {
   Td,
   TableCaption,
   TableContainer,
+  Flex
 } from "@chakra-ui/react";
 import PlanetModel from "../planet-model/PlanetModel";
 import { planets } from "../../assets/planets";
+import { FaRocket } from "react-icons/fa";
 
 const Travels = ({ destination }) => {
   const [start, setStart] = useState("default");
@@ -158,7 +160,7 @@ const Travels = ({ destination }) => {
                         <Th>Rebours</Th>
                         <Th>Départ</Th>
                         <Th>Arrivée</Th>
-                        <Th>Réserver</Th>
+                        <Th><Button w='96px' rightIcon={<FaRocket />}>Go</Button></Th>
                       </Tr>
                     </Tfoot>
                   </Table>
