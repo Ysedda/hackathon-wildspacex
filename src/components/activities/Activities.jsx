@@ -17,7 +17,7 @@ import {
   Image,
   Stack,
   Divider,
-  CardFooter
+  CardFooter,
 } from "@chakra-ui/react";
 import { planets } from "../../assets/planets";
 
@@ -47,36 +47,31 @@ const Activities = ({ planetName }) => {
           <ModalHeader m="2rem auto auto auto" color="#fff">
             Activités sur {planetName}
           </ModalHeader>
-          <ModalCloseButton m="2rem 2rem auto auto" />
-          <ModalBody 
-          display='flex'
-          justifyContent="space-around"
-          >
+          <ModalCloseButton m="2rem 2rem auto auto" color="#fff" />
+          <ModalBody display="flex" justifyContent="space-around">
             {myPlanet &&
-              Object.values(myPlanetActivities).map((activity, index) => 
-                <Card w="500px"
-                h="500px"
-                key={index}>
+              Object.values(myPlanetActivities).map((activity, index) => (
+                <Card w="500px" h="500px" key={index}>
                   <CardBody>
                     <Image
                       src={activity.image}
                       alt={activity.name}
-                      borderRadius='lg'
+                      borderRadius="lg"
                       w="xl"
                       minH="60%"
                     />
-                    <Stack mt='6' spacing='3'>
+                    <Stack mt="6" spacing="3">
                       <Divider />
-                      <Heading size='md'
-                        color='yellow.600'>{activity.name}</Heading>
+                      <Heading size="md" color="yellow.600">
+                        {activity.name}
+                      </Heading>
                     </Stack>
                   </CardBody>
-                  <CardFooter>
-                  </CardFooter>
+                  <CardFooter></CardFooter>
                 </Card>
-              )}
+              ))}
           </ModalBody>
-          <ModalFooter>
+          <ModalFooter justifyContent="center" m="2rem auto">
             <Button onClick={onClose}>Retour au système solaire</Button>
           </ModalFooter>
         </ModalContent>

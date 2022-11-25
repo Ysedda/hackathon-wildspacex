@@ -87,6 +87,10 @@ const PlanetsModel = ({ planet, size }) => {
       controls.autoRotate = true;
       controls.enableZoom = false;
       controls.target = target;
+      if (planet === "pin") {
+        controls.minPolarAngle = Math.PI / 2;
+        controls.maxPolarAngle = Math.PI / 2;
+      }
 
       loadGLTFModel(scene, `/images/${planet}.glb`, {
         receiveShadow: false,
