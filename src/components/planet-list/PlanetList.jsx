@@ -208,7 +208,7 @@ const PlanetList = () => {
                 w={"100%"}
                 zIndex={"500"}
                 onClick={() => {
-                  setOpenDetails("Mercure"); console.log(mercuryScrollX.current)
+                  setOpenDetails("Mercure");
                 }}
                 cursor={"pointer"}
               ></Box>
