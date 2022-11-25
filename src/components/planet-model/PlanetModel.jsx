@@ -67,6 +67,7 @@ const PlanetsModel = ({ planet, size }) => {
       if (planet === "uranus") scale *= 443;
       if (planet === "saturne") scale *= 1.95;
       if (planet === "soleil") scale /= 1900;
+      if (planet === "pin") scale /= 38;
       if (planet === "rocket") scale /= 5;
 
       let camera = new THREE.OrthographicCamera(
@@ -86,6 +87,10 @@ const PlanetsModel = ({ planet, size }) => {
       controls.autoRotate = true;
       controls.enableZoom = false;
       controls.target = target;
+      if (planet === "pin") {
+        controls.minPolarAngle = Math.PI / 2;
+        controls.maxPolarAngle = Math.PI / 2;
+      }
 
       loadGLTFModel(scene, `/images/${planet}.glb`, {
         receiveShadow: false,
@@ -128,8 +133,13 @@ const PlanetsModel = ({ planet, size }) => {
 
   return planet === "rocket" ? (
     <motion.div
-      initial={{ x: "-420%", y: -90,  rotate: 40, opacity: 0.9 }}
-      animate={{ x: "450%", y: [-70, -100, -20], rotate: [0, 100, 0], opacity: [0, 1, 1] }}
+      initial={{ x: "-420%", y: -90, rotate: 40, opacity: 0.9 }}
+      animate={{
+        x: "450%",
+        y: [-70, -100, -20],
+        rotate: [0, 100, 0],
+        opacity: [0, 1, 1],
+      }}
       transition={{ ease: "easeInOut", duration: 5 }}
       style={{
         height: size,

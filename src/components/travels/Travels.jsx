@@ -35,7 +35,9 @@ const Travels = ({ destination }) => {
 
   const handleSelect = (e) => {
     setStart("");
-    setTimeout(() => {setStart(e.target.value)}, 0);
+    setTimeout(() => {
+      setStart(e.target.value);
+    }, 0);
   };
 
   return (
@@ -80,7 +82,6 @@ const Travels = ({ destination }) => {
                 handleSelect(e);
               }}
               name="select-start"
-
             >
               {planets
                 .filter(
@@ -100,24 +101,19 @@ const Travels = ({ destination }) => {
               m="3rem auto"
             >
               {start === "" ? (
-                  <Image
-                    src="/images/interrogation.png"
-                    w="200px"
-                    bgColor="#fff"
-                    borderRadius="100%"
+                <PlanetModel planet="pin" size="150px" />
+              ) : (
+                <>
+                  <PlanetModel
+                    planet={start
+                      .normalize("NFD")
+                      .replace(/\p{Diacritic}/gu, "")
+                      .toLowerCase()}
+                    size="200px"
                   />
-                ) : (
-                  <>
-                    <PlanetModel
-                      planet={start
-                        .normalize("NFD")
-                        .replace(/\p{Diacritic}/gu, "")
-                        .toLowerCase()}
-                      size="200px"
-                    />
-                    <PlanetModel planet="rocket" size="100px" />
-                  </>
-                )}
+                  <PlanetModel planet="rocket" size="100px" />
+                </>
+              )}
               <PlanetModel
                 planet={destination
                   .normalize("NFD")
@@ -141,7 +137,9 @@ const Travels = ({ destination }) => {
                     le vaisseau-voyageur repart ensuite pour sa station de
                     lancement. Merci pour votre compréhension.
                   </Box>
-                ) : <Box></Box>}
+                ) : (
+                  <Box></Box>
+                )}
                 <TableContainer>
                   <Table>
                     <Thead>
@@ -178,9 +176,10 @@ const Travels = ({ destination }) => {
                                       <Countdown
                                         date={Date.now() + rebours}
                                         renderer={(props) => (
-                                          <Box>
-                                            {props.hours}h, {props.minutes} min,{" "}
-                                            {props.seconds} sec
+                                          <Box fontFamily="JetBrains Mono, monospace">
+                                            {props.days}j {props.hours}h{" "}
+                                            {props.minutes}min {props.seconds}
+                                            sec
                                           </Box>
                                         )}
                                       />
@@ -202,9 +201,11 @@ const Travels = ({ destination }) => {
                   </Table>
                 </TableContainer>
               </>
-            ) : <Box></Box>}
+            ) : (
+              <Box></Box>
+            )}
           </ModalBody>
-          <ModalFooter>
+          <ModalFooter justifyContent="center" m="2rem auto">
             <Button onClick={onClose}>Retour au système solaire</Button>
           </ModalFooter>
         </ModalContent>

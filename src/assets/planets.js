@@ -12,9 +12,7 @@ export const planets = [
   {
     name: "Mercure",
     image: "mercure.png",
-    activities: [
-      { name: "Usine de pansement", image: "images/mercure.jpg" },
-    ],
+    activities: [{ name: "Usine de pansement", image: "images/mercure.jpg" }],
     destinations: [
       {
         planet: "Soleil",
@@ -45,6 +43,11 @@ export const planets = [
         planet: "Terre",
         dateLaunch: "2022-12-01T11:00:00",
         dateArrival: "2022-12-03T22:00:00",
+      },
+      {
+        planet: "Terre",
+        dateLaunch: "2022-12-08T08:00:00",
+        dateArrival: "2022-12-15T20:00:00",
       },
       {
         planet: "Mars",
@@ -249,13 +252,13 @@ export const planets = [
       },
       {
         planet: "Saturne",
-        dateLaunch: "2022-11-28T08:00:00",
-        dateArrival: "2022-12-17T18:00:00",
+        dateLaunch: "2022-11-28 08:00",
+        dateArrival: "2022-11-28 18:00",
       },
       {
         planet: "Saturne",
-        dateLaunch: "2022-12-05T16:00:00",
-        dateArrival: "2022-12-16T03:00:00",
+        dateLaunch: "2022-12-05 16:00",
+        dateArrival: "2022-12-06 03:00",
       },
       {
         planet: "Uranus",
@@ -373,7 +376,10 @@ export const planets = [
     name: "Jupiter",
     image: "jupiter.png",
     activities: [
-      { name: "Visite guidée avec M.Channing Tatum", image: "images/jupiter.jpg" },
+      {
+        name: "Visite guidée avec M.Channing Tatum",
+        image: "images/jupiter.jpg",
+      },
       { name: "Chasseur de tornade", image: "images/tornade.jpeg" },
     ],
     destinations: [
@@ -465,7 +471,10 @@ export const planets = [
     activities: [
       { name: "Kart sur les anneaux", image: "images/kart.jpeg" },
       { name: "Visite des lunes", image: "images/lune.jpg" },
-      { name: "Trou de ver de Nolan", image: "images/interstellar-trou-noir.webp" },
+      {
+        name: "Trou de ver de Nolan",
+        image: "images/interstellar-trou-noir.webp",
+      },
     ],
     destinations: [
       {
