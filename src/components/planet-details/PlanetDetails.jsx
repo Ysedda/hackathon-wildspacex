@@ -8,7 +8,7 @@ import { TbArrowsDiagonal } from "react-icons/tb";
 import { TiThermometer } from "react-icons/ti";
 import { GiWeight } from "react-icons/gi";
 
-const PlanetDetails = ({ planet, currentScale }) => {
+const PlanetDetails = ({ planet, currentScale, originScale }) => {
   const planetName = planet;
   const planetNameLower = planet
     .normalize("NFD")
@@ -63,11 +63,11 @@ const PlanetDetails = ({ planet, currentScale }) => {
     <motion.div
       id="cards"
       key="card"
-      style={{ transformOrigin: "0 100%" }}
+      style={{ transformOrigin: originScale }}
       initial={{ scale: 0 }}
       animate={{ scale: calculScale }}
       exit={{ scale: 0 }}
-      transition={{ ease: "easeIn", duration: 0.4 }}
+      transition={{ ease: "easeIn", duration: 0.1 }}
     >
       <div className="card">
         <div className="card-content">
