@@ -1,10 +1,9 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Box, Center, Flex, Text } from "@chakra-ui/react";
-import Planet from "../planet/Planet";
 import PlanetModel from "../planet-model/PlanetModel";
 import Activities from "../activities/Activities";
 import Travels from "../travels/Travels";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 import "./planetList.css";
 
@@ -141,11 +140,11 @@ const PlanetList = () => {
     ["0.2", "1", "0.4"]
   );
 
-  useEffect(() => {
-    return scrollY.onChange((latest) => {
-      console.log("Page scroll: ", latest);
-    });
-  }, []);
+  // useEffect(() => {
+  //   return scrollY.onChange((latest) => {
+  //     console.log("Page scroll: ", latest);
+  //   });
+  // }, []);
 
   return (
     <>
