@@ -70,14 +70,14 @@ div {
 .bouncing-astronaut > div {
     height: 50px;
     width: 50px;
-  animation: bouncingAstronautX 10s linear infinite alternate;
+  /* animation: bouncingAstronautX 10s linear infinite alternate; */
 }
 
-.bouncing-astronaut > div > img {
+/* .bouncing-astronaut > div > img {
     height: 50px;
     width: 50px;
   animation: bouncingAstronautY 10s linear infinite alternate;
-}
+} */
 
 @keyframes bouncingAstronautX {
   100% {

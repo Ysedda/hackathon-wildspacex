@@ -101,12 +101,6 @@ const Travels = ({ destination }) => {
               m="3rem auto"
             >
               {start === "" ? (
-                // <Image
-                //   src="/images/interrogation.png"
-                //   w="200px"
-                //   bgColor="#fff"
-                //   borderRadius="100%"
-                // />
                 <PlanetModel planet="pin" size="150px" />
               ) : (
                 <>
@@ -183,8 +177,9 @@ const Travels = ({ destination }) => {
                                         date={Date.now() + rebours}
                                         renderer={(props) => (
                                           <Box fontFamily="JetBrains Mono, monospace">
-                                            {props.hours}h {props.minutes}min{" "}
-                                            {props.seconds}sec
+                                            {props.days}j {props.hours}h{" "}
+                                            {props.minutes}min {props.seconds}
+                                            sec
                                           </Box>
                                         )}
                                       />
@@ -210,7 +205,7 @@ const Travels = ({ destination }) => {
               <Box></Box>
             )}
           </ModalBody>
-          <ModalFooter>
+          <ModalFooter justifyContent="center" m="2rem auto">
             <Button onClick={onClose}>Retour au système solaire</Button>
           </ModalFooter>
         </ModalContent>
