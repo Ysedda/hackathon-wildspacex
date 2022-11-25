@@ -106,7 +106,7 @@ const Home = () => {
         left={"0"}
         height={"100vh"}
         w={"100%"}
-        zIndex={"2"}
+        zIndex={"-1"}
         overflowX={"hidden"}
       >
         <Box>
