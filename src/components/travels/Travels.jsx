@@ -26,12 +26,12 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import PlanetModel from "../planet-model/PlanetModel";
+import Countdown from "react-countdown";
 import { planets } from "../../assets/planets";
 import { FaMonument, FaRocket } from "react-icons/fa";
 import { useEffect } from "react";
 
 const Travels = ({ destination }) => {
-
   const [start, setStart] = useState("default");
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -128,17 +128,23 @@ const Travels = ({ destination }) => {
             {start !== null && start !== "default" ? (
               <>
                 {destination === "Soleil" ? (
-                  <Box color="#fff">
-                    Nous rappelons aux voyageurs qu'il n'y a pas d'arrêt au
-                    Soleil mais seulement un tour de l'astre. Le vaisseau
-                    reviendra sur la même planète après avoir fait le tour de
-                    notre étoile. Merci pour votre compréhension.
+                  <Box
+                    color="#ff0000"
+                    maxW="800px"
+                    m="2rem auto"
+                    textAlign="center"
+                  >
+                    Nous rappelons aux voyageurs qu'il n'y a évidemment pas
+                    d'arrêt sur le Soleil. Après avoir fait le tour de l'étoile,
+                    le vaisseau-voyageur repart ensuite pour sa station de
+                    lancement. Merci pour votre compréhension.
                   </Box>
                 ) : null}
                 <TableContainer>
                   <Table>
                     <Thead>
                       <Tr>
+                        <Th>Décollage dans...</Th>
                         <Th>Départ</Th>
                         <Th>Arrivée</Th>
                         <Th>Réserver</Th>
@@ -155,10 +161,34 @@ const Travels = ({ destination }) => {
                                   destinationFilter.planet === destination
                               )
                               .map((destinationMap, index) => {
+                                const dateLaunch = new Date(
+                                  destinationMap.dateLaunch
+                                );
+                                const dateArrival = new Date(
+                                  destinationMap.dateArrival
+                                );
+                                const rebours =
+                                  dateArrival.getTime() - dateLaunch.getTime();
+
                                 return (
                                   <Tr key={index}>
-                                    <Td color='white'>{destinationMap.dateLaunch}</Td>
-                                    <Td color='white'>{destinationMap.dateArrival}</Td>
+                                    <Td color="white">
+                                      <Countdown
+                                        date={Date.now() + rebours}
+                                        renderer={(props) => (
+                                          <Box>
+                                            {props.hours}h, {props.minutes} min,{" "}
+                                            {props.seconds} sec
+                                          </Box>
+                                        )}
+                                      />
+                                    </Td>
+                                    <Td color="white">
+                                      {dateLaunch.toLocaleDateString()}
+                                    </Td>
+                                    <Td color="white">
+                                      {dateArrival.toLocaleDateString()}
+                                    </Td>
                                     <Td>
                                       <Button w="96px" rightIcon={<FaRocket />}>
                                         Go
