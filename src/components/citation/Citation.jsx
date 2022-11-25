@@ -12,6 +12,8 @@ const Citation = () => {
             src='/images/interstellar-trou-noir.webp'
             alt='Green double couch with wooden legs'
             borderRadius='lg'
+            backgroundPosition={'cover'}
+            height={'200px'}
           />
           <Stack mt='6' spacing='3'>
             <Divider />
@@ -36,6 +38,8 @@ const Citation = () => {
             src='/images/soleil-sourire.jpeg'
             alt='Green double couch with wooden legs'
             borderRadius='lg'
+            backgroundPosition={'cover'}
+            height={'200px'}
           />
           <Stack mt='6' spacing='3'>
             <Divider />
@@ -57,6 +61,8 @@ const Citation = () => {
             src='/images/vaisseau.jpg'
             alt='Green double couch with wooden legs'
             borderRadius='lg'
+            backgroundPosition={'cover'}
+            height={'200px'}
           />
           <Stack mt='6' spacing='3'>
             <Divider />
