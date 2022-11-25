@@ -55,7 +55,7 @@ const Travels = ({ destination }) => {
               m="auto"
               fontSize="1.5rem"
               color="#fff"
-              fontFamily="inherit"
+              fontFamily="JetBrains Mono, monospace"
               textAlign="center"
             >
               Choisissez votre planète de départ
