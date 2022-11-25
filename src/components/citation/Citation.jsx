@@ -4,7 +4,7 @@ const Citation = () => {
   return (
     <Box
       display="flex"
-      justifyContent="space-between"
+      justifyContent="space-evenly"
       >
       <Card maxW='sm'>
         <CardBody>

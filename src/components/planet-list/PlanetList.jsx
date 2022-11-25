@@ -158,7 +158,7 @@ const PlanetList = () => {
 
   return (
     <>
-      <Box h="3900px" overflowX={"hidden"}>
+      <Box h="3640px" overflowX={"hidden"}>
         <Center>
           <Flex w="400px" direction={"column"} position={"relative"}>
             <Box
