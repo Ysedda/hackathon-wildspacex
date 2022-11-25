@@ -2,7 +2,6 @@ import { Heading, Image, Text, Flex, Button } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./planet-details.css";
-import { planets } from "../../assets/planets";
 import Activities from "../activities/Activities";
 import Travels from "../travels/Travels";
 import { TbArrowsDiagonal } from "react-icons/tb";
@@ -109,15 +108,11 @@ const PlanetDetails = ({ planet, currentScale }) => {
                 >
                   Activités
                 </Heading>
-                {jupiterActivities2 &&
-                  Object.values(jupiterActivities2).map((activity, index) => (
-                    <Text key={index} color="whiteAlpha.600">
-                      {activity.name}
-                    </Text>
-                  ))} */}
-                  <Flex w='100' justifyContent={'center'}>
-                <Activities destination={planetName} />
-                <Travels destination={planetName} /></Flex>
+ */}
+                <Flex w="100" justifyContent={"center"}>
+                  <Activities planetName={planetName} />
+                  <Travels destination={planetName} />
+                </Flex>
               </div>
             </Flex>
           </div>

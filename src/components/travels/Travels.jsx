@@ -26,6 +26,7 @@ import {
 import PlanetModel from "../planet-model/PlanetModel";
 import { planets } from "../../assets/planets";
 import { FaRocket } from "react-icons/fa";
+import { useEffect } from "react";
 
 const Travels = ({ destination }) => {
   const [start, setStart] = useState("default");
@@ -99,6 +100,7 @@ const Travels = ({ destination }) => {
                       .replace(/\p{Diacritic}/gu, "")
                       .toLowerCase()}
                     size="200px"
+                    start={start}
                   />
                 )
               ) : null}
