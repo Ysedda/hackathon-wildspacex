@@ -1,7 +1,7 @@
 export const planets = [
   {
-    name: "Sun",
-    image: "sun.jpg",
+    name: "Soleil",
+    image: "Soleil.jpg",
     activities: [
       { name: "Bronzage", image: "bronzage.jpg" },
       { name: "Barbecue", image: "barbecue.jpg" },
@@ -52,7 +52,7 @@ export const planets = [
     ],
     destinations: [
       {
-        planet: "Sun",
+        planet: "Soleil",
         date: "29/11/2022",
       },
       {
@@ -103,7 +103,7 @@ export const planets = [
         date: "06/12/2022",
       },
       {
-        planet: "Sun",
+        planet: "Soleil",
         date: "02/01/2023",
       },
       {
@@ -141,7 +141,7 @@ export const planets = [
         date: "29/11/2022",
       },
       {
-        planet: "Sun",
+        planet: "Soleil",
         date: "06/12/2022",
       },
       {
@@ -195,7 +195,7 @@ export const planets = [
         date: "08/12/2022",
       },
       {
-        planet: "Sun",
+        planet: "Soleil",
         date: "29/12/2022",
       },
       {
@@ -250,7 +250,7 @@ export const planets = [
         date: "29/11/2022",
       },
       {
-        planet: "Sun",
+        planet: "Soleil",
         date: "27/11/2022",
       },
     ],
@@ -277,7 +277,7 @@ export const planets = [
         date: "05/12/2022",
       },
       {
-        planet: "Sun",
+        planet: "Soleil",
         date: "06/01/2022",
       },
       {
@@ -327,7 +327,7 @@ export const planets = [
         date: "12/01/2023",
       },
       {
-        planet: "Sun",
+        planet: "Soleil",
         date: "05/12/2022",
       },
       {
