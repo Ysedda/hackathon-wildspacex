@@ -29,8 +29,6 @@ import PlanetModel from "../planet-model/PlanetModel";
 import { planets } from "../../assets/planets";
 import { FaMonument, FaRocket } from "react-icons/fa";
 import { useEffect } from "react";
-import moment from 'moment';
-moment().format();
 
 const Travels = ({ destination }) => {
 
