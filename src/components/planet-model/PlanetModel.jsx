@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import * as THREE from "three";
+import { motion } from "framer-motion";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
@@ -126,12 +127,14 @@ const PlanetsModel = ({ planet, size }) => {
   }, []);
 
   return planet === "rocket" ? (
-    <div
+    <motion.div
+      initial={{ x: -350, y: -90,  rotate: 40, opacity: 0 }}
+      animate={{ x: 300, y: [-70, -100, -20], rotate: 120, opacity: [0, 1, 1] }}
+      transition={{ ease: "easeIn", duration: 5 }}
       style={{
         height: size,
         width: size,
         position: "relative",
-        transform: "rotate(90deg)",
       }}
       ref={refContainer}
     >
@@ -140,7 +143,7 @@ const PlanetsModel = ({ planet, size }) => {
           Loading...
         </span>
       )}
-    </div>
+    </motion.div>
   ) : (
     <div
       style={{ height: size, width: size, position: "relative" }}
