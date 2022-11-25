@@ -1,9 +1,12 @@
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  AnimatePresence,
+} from "framer-motion";
 import { Box, Center, Flex, Text } from "@chakra-ui/react";
 import PlanetModel from "../planet-model/PlanetModel";
 import PlanetDetails from "../planet-details/PlanetDetails";
-import Activities from "../activities/Activities";
-import Travels from "../travels/Travels";
 import { useEffect, useState } from "react";
 
 const PlanetList = () => {
@@ -11,11 +14,10 @@ const PlanetList = () => {
 
   const { scrollY } = useScroll();
 
-
   useEffect(() => {
     return scrollY.onChange(() => {
-        setOpenDetails(false);
-    })
+      setOpenDetails(false);
+    });
   }, []);
 
   const soleilY = useTransform(scrollY, [0, 400], ["150%", "0%"]);
@@ -173,7 +175,9 @@ const PlanetList = () => {
             ></Box>
             <Box position={"absolute"} top={"0%"} left={"50%"} zIndex={"600"}>
               <AnimatePresence>
-                {openDetails === "Soleil" && <PlanetDetails planet={openDetails} />}
+                {openDetails === "Soleil" && (
+                  <PlanetDetails planet={openDetails} />
+                )}
               </AnimatePresence>
             </Box>
             <motion.div style={{ y: soleilY }}>
@@ -187,35 +191,50 @@ const PlanetList = () => {
           </Flex>
         </Center>
 
-        <Box><motion.div
-          style={{ y: mercuryScrollY, x: mercuryScrollX, scale: mercuryScale }}
-        >
-          <Flex w="300px" direction={"column"} position={"relative"}>
-            <Box
-              position={"absolute"}
-              top={"0"}
-              left={"0"}
-              h={"100%"}
-              w={"100%"}
-              zIndex={"500"}
-              onClick={() => {
-                setOpenDetails("Mercure");
-              }}
-            ></Box>
-            <Box position={"absolute"} top={"-100%"} left={"50%"} zIndex={"600"} >
-              <AnimatePresence>
-                {openDetails  === "Mercure" && <PlanetDetails planet={openDetails} currentScale={mercuryScale.current}/>}
-              </AnimatePresence>
-            </Box>
-            <PlanetModel planet="mercure" size="300px" />
-            <Center>
-              <Text color={"white"} fontSize={"3rem"}>
-                Mercure
-              </Text>
-            </Center>
-          </Flex>
-        </motion.div></Box>
-        
+        <Box>
+          <motion.div
+            style={{
+              y: mercuryScrollY,
+              x: mercuryScrollX,
+              scale: mercuryScale,
+            }}
+          >
+            <Flex w="300px" direction={"column"} position={"relative"}>
+              <Box
+                position={"absolute"}
+                top={"0"}
+                left={"0"}
+                h={"100%"}
+                w={"100%"}
+                zIndex={"500"}
+                onClick={() => {
+                  setOpenDetails("Mercure");
+                }}
+              ></Box>
+              <Box
+                position={"absolute"}
+                top={"-100%"}
+                left={"50%"}
+                zIndex={"600"}
+              >
+                <AnimatePresence>
+                  {openDetails === "Mercure" && (
+                    <PlanetDetails
+                      planet={openDetails}
+                      currentScale={mercuryScale.current}
+                    />
+                  )}
+                </AnimatePresence>
+              </Box>
+              <PlanetModel planet="mercure" size="300px" />
+              <Center>
+                <Text color={"white"} fontSize={"3rem"}>
+                  Mercure
+                </Text>
+              </Center>
+            </Flex>
+          </motion.div>
+        </Box>
 
         <motion.div
           style={{ y: venusScrollY, x: venusScrollX, scale: venusScale }}
@@ -229,18 +248,28 @@ const PlanetList = () => {
               w={"100%"}
               zIndex={"500"}
               onClick={() => {
-                setOpenDetails("Venus");
+                setOpenDetails("Vénus");
               }}
             ></Box>
-            <Box position={"absolute"} top={"-100%"} left={"50%"} zIndex={"600"} >
+            <Box
+              position={"absolute"}
+              top={"-100%"}
+              left={"50%"}
+              zIndex={"600"}
+            >
               <AnimatePresence>
-                {openDetails  === "Venus" && <PlanetDetails planet={openDetails} currentScale={venusScale.current}/>}
+                {openDetails === "Vénus" && (
+                  <PlanetDetails
+                    planet={openDetails}
+                    currentScale={venusScale.current}
+                  />
+                )}
               </AnimatePresence>
             </Box>
             <PlanetModel planet="venus" size="300px" />
             <Center>
               <Text color={"white"} fontSize={"3rem"}>
-                Venus
+                Vénus
               </Text>
             </Center>
           </Flex>
@@ -261,9 +290,19 @@ const PlanetList = () => {
                 setOpenDetails("Terre");
               }}
             ></Box>
-            <Box position={"absolute"} top={"-100%"} left={"50%"} zIndex={"600"}>
+            <Box
+              position={"absolute"}
+              top={"-100%"}
+              left={"50%"}
+              zIndex={"600"}
+            >
               <AnimatePresence>
-                {openDetails  === "Terre" && <PlanetDetails planet={openDetails} currentScale={terreScale.current} />}
+                {openDetails === "Terre" && (
+                  <PlanetDetails
+                    planet={openDetails}
+                    currentScale={terreScale.current}
+                  />
+                )}
               </AnimatePresence>
             </Box>
             <PlanetModel planet="terre" size="300px" />
@@ -290,9 +329,19 @@ const PlanetList = () => {
                 setOpenDetails("Mars");
               }}
             ></Box>
-            <Box position={"absolute"} top={"-100%"} left={"50%"} zIndex={"600"}>
+            <Box
+              position={"absolute"}
+              top={"-100%"}
+              left={"50%"}
+              zIndex={"600"}
+            >
               <AnimatePresence>
-                {openDetails  === "Mars" && <PlanetDetails planet={openDetails} currentScale={marsScale.current}/>}
+                {openDetails === "Mars" && (
+                  <PlanetDetails
+                    planet={openDetails}
+                    currentScale={marsScale.current}
+                  />
+                )}
               </AnimatePresence>
             </Box>
             <PlanetModel planet="mars" size="300px" />
@@ -321,7 +370,12 @@ const PlanetList = () => {
             ></Box>
             <Box position={"absolute"} top={"-60%"} left={"50%"} zIndex={"600"}>
               <AnimatePresence>
-                {openDetails === "Jupiter" && <PlanetDetails planet={openDetails} currentScale={jupiterScale.current}/>}
+                {openDetails === "Jupiter" && (
+                  <PlanetDetails
+                    planet={openDetails}
+                    currentScale={jupiterScale.current}
+                  />
+                )}
               </AnimatePresence>
             </Box>
             <PlanetModel planet="jupiter" size="500px" />
@@ -350,7 +404,12 @@ const PlanetList = () => {
             ></Box>
             <Box position={"absolute"} top={"-40%"} left={"50%"} zIndex={"600"}>
               <AnimatePresence>
-                {openDetails === "Saturne" && <PlanetDetails planet={openDetails} currentScale={saturneScale.current*2}/>}
+                {openDetails === "Saturne" && (
+                  <PlanetDetails
+                    planet={openDetails}
+                    currentScale={saturneScale.current * 2}
+                  />
+                )}
               </AnimatePresence>
             </Box>
             <PlanetModel planet="saturne" size="400px" />
@@ -377,9 +436,19 @@ const PlanetList = () => {
                 setOpenDetails("Uranus");
               }}
             ></Box>
-            <Box position={"absolute"} top={"-100%"} left={"50%"} zIndex={"600"}>
+            <Box
+              position={"absolute"}
+              top={"-100%"}
+              left={"50%"}
+              zIndex={"600"}
+            >
               <AnimatePresence>
-                {openDetails === "Uranus" && <PlanetDetails planet={openDetails} currentScale={uranusScale.current}/>}
+                {openDetails === "Uranus" && (
+                  <PlanetDetails
+                    planet={openDetails}
+                    currentScale={uranusScale.current}
+                  />
+                )}
               </AnimatePresence>
             </Box>
             <PlanetModel planet="uranus" size="300px" />
@@ -406,9 +475,19 @@ const PlanetList = () => {
                 setOpenDetails("Neptune");
               }}
             ></Box>
-            <Box position={"absolute"} top={"-100%"} left={"50%"} zIndex={"600"}>
+            <Box
+              position={"absolute"}
+              top={"-100%"}
+              left={"50%"}
+              zIndex={"600"}
+            >
               <AnimatePresence>
-                {openDetails === "Neptune" && <PlanetDetails planet={openDetails} currentScale={neptuneScale.current}/>}
+                {openDetails === "Neptune" && (
+                  <PlanetDetails
+                    planet={openDetails}
+                    currentScale={neptuneScale.current}
+                  />
+                )}
               </AnimatePresence>
             </Box>
             <PlanetModel planet="neptune" size="300px" />
@@ -419,9 +498,6 @@ const PlanetList = () => {
             </Center>
           </Flex>
         </motion.div>
-
-        <Activities destination="jupiter" />
-        <Travels destination="soleil" />
       </Box>
     </>
   );

@@ -3,12 +3,20 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./planet-details.css";
 import { planets } from "../../assets/planets";
+import Activities from "../activities/Activities";
+import Travels from "../travels/Travels";
 import { TbArrowsDiagonal } from "react-icons/tb";
 import { TiThermometer } from "react-icons/ti";
 import { GiWeight } from "react-icons/gi";
 
 const PlanetDetails = ({ planet, currentScale }) => {
-  const [planetName, setPlanetName] = useState("");
+  const planetName = planet;
+  const planetNameLower = planet
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "")
+    .toLowerCase();
+
+  // const [planetName, setPlanetName] = useState("");
   const [planetRadius, setPlanetRadius] = useState("");
   const [planetTemperature, setPlanetTemperature] = useState("");
   const [planetGravity, setPlanetGravity] = useState("");
@@ -17,23 +25,18 @@ const PlanetDetails = ({ planet, currentScale }) => {
   useEffect(() => {
     if (currentScale && calculScale === 1) {
       const dif = 1 / parseFloat(currentScale);
-      setCalculScale((1+dif)/2);
+      setCalculScale((1 + dif) / 2);
     }
   }, []);
-
-  const jupiterActivities = planets.filter(
-    (planet) => planet.name === "Jupiter"
-  );
-  const jupiterActivities2 = { ...jupiterActivities[0].activities };
 
   useEffect(() => {
     const getPlanet = async () => {
       try {
         const res = await fetch(
-          "https://api.le-systeme-solaire.net/rest/bodies/jupiter"
+          `https://api.le-systeme-solaire.net/rest/bodies/${planetNameLower}`
         );
         const planet = await res.json();
-        setPlanetName(planet.name);
+        // setPlanetName(planet.name);
         setPlanetRadius(planet.meanRadius);
         setPlanetTemperature(planet.avgTemp);
         setPlanetGravity(planet.gravity);
@@ -75,24 +78,29 @@ const PlanetDetails = ({ planet, currentScale }) => {
             </Heading>
           </Flex>
           <div className="card-image">
-            <Image src="/public/images/jupiter.png"></Image>
+            <Image src={`/images/${planetNameLower}.png`}></Image>
           </div>
           <div className="card-info-wrapper">
             <Flex className="card-info" flexDirection={"column"}>
               <div className="card-info-title">
-                <Flex alignItems='center' gap='10px'><TbArrowsDiagonal color="white" opacity='0.6' size={'20px'}/><Text color="whiteAlpha.600">{planetRadius} km de rayon</Text></Flex>
-                <Flex alignItems='center' gap='10px'><TiThermometer color="white" opacity='0.6' size={'20px'}/>
-                
-                <Text color="whiteAlpha.600">
-                  {planetTemperature - 273} degrés °C
-                </Text>
+                <Flex alignItems="center" gap="10px">
+                  <TbArrowsDiagonal color="white" opacity="0.6" size={"20px"} />
+                  <Text color="whiteAlpha.600">{planetRadius} km de rayon</Text>
                 </Flex>
-                <Flex alignItems='center' gap='10px'><GiWeight color="white" opacity='0.6' size={'20px'}/>
-                <Text color="whiteAlpha.600">
-                  {(planetGravity / 9.81).toFixed(1)}x la gravité terreste
-                </Text>
+                <Flex alignItems="center" gap="10px">
+                  <TiThermometer color="white" opacity="0.6" size={"20px"} />
+
+                  <Text color="whiteAlpha.600">
+                    {planetTemperature - 273} degrés °C
+                  </Text>
                 </Flex>
-                <Heading
+                <Flex alignItems="center" gap="10px">
+                  <GiWeight color="white" opacity="0.6" size={"20px"} />
+                  <Text color="whiteAlpha.600">
+                    {(planetGravity / 9.81).toFixed(1)}x la gravité terreste
+                  </Text>
+                </Flex>
+                {/* <Heading
                   as="h1"
                   color="white"
                   size="md"
@@ -106,7 +114,10 @@ const PlanetDetails = ({ planet, currentScale }) => {
                     <Text key={index} color="whiteAlpha.600">
                       {activity.name}
                     </Text>
-                  ))}
+                  ))} */}
+
+                <Activities destination={planetName} />
+                <Travels destination={planetName} />
               </div>
             </Flex>
           </div>
