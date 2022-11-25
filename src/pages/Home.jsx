@@ -13,9 +13,10 @@ import PlanetDetails from "../components/planet-details/PlanetDetails";
 
 const Home = () => {
   const homeStyle = {
-    backgroundImage: "url(/images/background.png)",
+    backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) ,url(/images/background.png)",
     backgroundRepeat: "repeat",
     backgroundSize: "40%",
+    backdropFilter: "opacity(10%)",
   };
 
   useEffect(() => {
