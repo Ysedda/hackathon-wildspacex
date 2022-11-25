@@ -66,8 +66,9 @@ const PlanetsModel = ({ planet, size }) => {
       if (planet === "uranus") scale *= 443;
       if (planet === "saturne") scale *= 1.95;
       if (planet === "soleil") scale /= 1900;
+      if (planet === "rocket") scale /= 5;
 
-      const camera = new THREE.OrthographicCamera(
+      let camera = new THREE.OrthographicCamera(
         -scale,
         scale,
         scale,
@@ -75,6 +76,7 @@ const PlanetsModel = ({ planet, size }) => {
         0.01,
         50000
       );
+
       const target = new THREE.Vector3(0, 0, 0);
       const initialCameraPosition = new THREE.Vector3(0, 0, 1000);
       const ambientLight = new THREE.AmbientLight(0xcccccc, 1);
@@ -112,6 +114,7 @@ const PlanetsModel = ({ planet, size }) => {
           controls.update();
         }
 
+        if (planet === "rocket") controls.enabled = false;
         renderer.render(scene, camera);
       };
 
