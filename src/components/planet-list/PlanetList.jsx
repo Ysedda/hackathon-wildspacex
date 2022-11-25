@@ -136,17 +136,17 @@ const PlanetList = () => {
 
   const neptuneScrollX = useTransform(
     scrollY,
-    [3074, 3300, 3600],
+    [3074, 3500, 3900],
     ["100%", "-50%", "-70%"]
   );
   const neptuneScrollY = useTransform(
     scrollY,
     [3074, 3180, 3400],
-    ["-200%", "-100%", "-100%"]
+    ["-200%", "-100%", "-150%"]
   );
   const neptuneScale = useTransform(
     scrollY,
-    [3074, 3180, 3300],
+    [3074, 3280, 3900],
     ["0.2", "1", "0.4"]
   );
 
@@ -173,10 +173,10 @@ const PlanetList = () => {
               }}
               cursor={"pointer"}
             ></Box>
-            <Box position={"absolute"} top={"0%"} left={"50%"} zIndex={"600"}>
+            <Box position={"absolute"} top={"50%"} left={"50%"} zIndex={"600"}>
               <AnimatePresence>
                 {openDetails === "Soleil" && (
-                  <PlanetDetails planet={openDetails} />
+                  <PlanetDetails planet={openDetails} originScale={"0% 0%"}/>
                 )}
               </AnimatePresence>
             </Box>
@@ -208,13 +208,14 @@ const PlanetList = () => {
                 w={"100%"}
                 zIndex={"500"}
                 onClick={() => {
-                  setOpenDetails("Mercure");
+                  setOpenDetails("Mercure"); console.log(mercuryScrollX.current)
                 }}
+                cursor={"pointer"}
               ></Box>
               <Box
                 position={"absolute"}
                 top={"-100%"}
-                left={"50%"}
+                left={parseFloat(mercuryScrollX.current) >= 50 ? "-150%" : "50%"}
                 zIndex={"600"}
               >
                 <AnimatePresence>
@@ -222,6 +223,7 @@ const PlanetList = () => {
                     <PlanetDetails
                       planet={openDetails}
                       currentScale={mercuryScale.current}
+                      originScale={parseFloat(mercuryScrollX.current) >= 50 ? "100% 100%" : "0% 100%"}
                     />
                   )}
                 </AnimatePresence>
@@ -250,11 +252,12 @@ const PlanetList = () => {
               onClick={() => {
                 setOpenDetails("Vénus");
               }}
+              cursor={"pointer"}
             ></Box>
             <Box
               position={"absolute"}
               top={"-100%"}
-              left={"50%"}
+              left={parseFloat(venusScrollX.current) >= 50 ? "-150%" : "50%"}
               zIndex={"600"}
             >
               <AnimatePresence>
@@ -262,6 +265,7 @@ const PlanetList = () => {
                   <PlanetDetails
                     planet={openDetails}
                     currentScale={venusScale.current}
+                    originScale={parseFloat(venusScrollX.current) >= 50 ? "100% 100%" : "0% 100%"}
                   />
                 )}
               </AnimatePresence>
@@ -289,11 +293,12 @@ const PlanetList = () => {
               onClick={() => {
                 setOpenDetails("Terre");
               }}
+              cursor={"pointer"}
             ></Box>
             <Box
               position={"absolute"}
               top={"-100%"}
-              left={"50%"}
+              left={parseFloat(terreScrollX.current) >= 50 ? "-150%" : "50%"}
               zIndex={"600"}
             >
               <AnimatePresence>
@@ -301,6 +306,7 @@ const PlanetList = () => {
                   <PlanetDetails
                     planet={openDetails}
                     currentScale={terreScale.current}
+                    originScale={parseFloat(terreScrollX.current) >= 50 ? "100% 100%" : "0% 100%"}
                   />
                 )}
               </AnimatePresence>
@@ -328,11 +334,12 @@ const PlanetList = () => {
               onClick={() => {
                 setOpenDetails("Mars");
               }}
+              cursor={"pointer"}
             ></Box>
             <Box
               position={"absolute"}
               top={"-100%"}
-              left={"50%"}
+              left={parseFloat(marsScrollX.current) >= 50 ? "-150%" : "50%"}
               zIndex={"600"}
             >
               <AnimatePresence>
@@ -340,6 +347,7 @@ const PlanetList = () => {
                   <PlanetDetails
                     planet={openDetails}
                     currentScale={marsScale.current}
+                    originScale={parseFloat(marsScrollX.current) >= 50 ? "100% 100%" : "0% 100%"}
                   />
                 )}
               </AnimatePresence>
@@ -367,13 +375,15 @@ const PlanetList = () => {
               onClick={() => {
                 setOpenDetails("Jupiter");
               }}
+              cursor={"pointer"}
             ></Box>
-            <Box position={"absolute"} top={"-60%"} left={"50%"} zIndex={"600"}>
+            <Box position={"absolute"} top={"-40%"} left={parseFloat(jupiterScrollX.current) >= 50 ? "-150%" : "50%"} zIndex={"600"} >
               <AnimatePresence>
                 {openDetails === "Jupiter" && (
                   <PlanetDetails
                     planet={openDetails}
                     currentScale={jupiterScale.current}
+                    originScale={parseFloat(jupiterScrollX.current) >= 50 ? "100% 100%" : "0% 100%"}
                   />
                 )}
               </AnimatePresence>
@@ -401,20 +411,22 @@ const PlanetList = () => {
               onClick={() => {
                 setOpenDetails("Saturne");
               }}
+              cursor={"pointer"}
             ></Box>
-            <Box position={"absolute"} top={"-40%"} left={"50%"} zIndex={"600"}>
+            <Box position={"absolute"} top={"30%"} left={parseFloat(saturneScrollX.current) >= 50 ? "-100%" : "50%"} zIndex={"600"}>
               <AnimatePresence>
                 {openDetails === "Saturne" && (
                   <PlanetDetails
                     planet={openDetails}
-                    currentScale={saturneScale.current * 2}
+                    currentScale={saturneScale.current * 2.2}
+                    originScale={parseFloat(saturneScrollX.current) >= 50 ? "100% 0%" : "0% 0%"}
                   />
                 )}
               </AnimatePresence>
             </Box>
             <PlanetModel planet="saturne" size="400px" />
             <Center>
-              <Text color={"white"} fontSize={"2rem"}>
+              <Text color={"white"} fontSize={"2rem"} mt={"-158px"}>
                 Saturne
               </Text>
             </Center>
@@ -435,11 +447,12 @@ const PlanetList = () => {
               onClick={() => {
                 setOpenDetails("Uranus");
               }}
+              cursor={"pointer"}
             ></Box>
             <Box
               position={"absolute"}
               top={"-100%"}
-              left={"50%"}
+              left={parseFloat(uranusScrollX.current) >= 50 ? "-150%" : "50%"}
               zIndex={"600"}
             >
               <AnimatePresence>
@@ -447,6 +460,7 @@ const PlanetList = () => {
                   <PlanetDetails
                     planet={openDetails}
                     currentScale={uranusScale.current}
+                    originScale={parseFloat(uranusScrollX.current) >= 50 ? "100% 100%" : "0% 100%"}
                   />
                 )}
               </AnimatePresence>
@@ -474,11 +488,12 @@ const PlanetList = () => {
               onClick={() => {
                 setOpenDetails("Neptune");
               }}
+              cursor={"pointer"}
             ></Box>
             <Box
               position={"absolute"}
               top={"-100%"}
-              left={"50%"}
+              left={parseFloat(neptuneScrollX.current) >= 50 ? "-150%" : "50%"}
               zIndex={"600"}
             >
               <AnimatePresence>
@@ -486,6 +501,7 @@ const PlanetList = () => {
                   <PlanetDetails
                     planet={openDetails}
                     currentScale={neptuneScale.current}
+                    originScale={parseFloat(neptuneScrollX.current) >= 50 ? "100% 100%" : "0% 100%"}
                   />
                 )}
               </AnimatePresence>
