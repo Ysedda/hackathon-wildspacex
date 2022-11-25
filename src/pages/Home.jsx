@@ -108,8 +108,269 @@ const Home = () => {
         zIndex={"-1"}
         overflowX={"hidden"}
       >
-        <Box>
-          <Image src="/images/astronaut-640x640.png" />
+        <Box animation={"bouncingAstronautX 9.2s linear infinite alternate"}>
+          <Image
+            h="50px"
+            w="50px"
+            animation= {"bouncingAstronautY 9.2s linear infinite alternate"}
+            src="/images/astronaut-640x640.png"
+          />
+        </Box>
+      </Box>
+      <Box
+        className="bouncing-astronaut"
+        position={"absolute"}
+        top={"300vh"}
+        left={"0"}
+        height={"100vh"}
+        w={"100%"}
+        zIndex={"-1"}
+        overflowX={"hidden"}
+      >
+        <Box animation={"bouncingAstronautX 8s linear infinite alternate"}>
+          <Image h="50px"
+            w="50px"
+            animation= {"bouncingAstronautY 8s linear infinite alternate"} src="/images/astronaut-640x640.png" />
+        </Box>
+      </Box>
+      <Box
+        className="bouncing-astronaut"
+        position={"absolute"}
+        top={"500vh"}
+        left={"0"}
+        height={"100vh"}
+        w={"100%"}
+        zIndex={"-1"}
+        overflowX={"hidden"}
+      >
+        <Box animation={"bouncingAstronautX 9s linear infinite alternate"}>
+          <Image h="50px"
+            w="50px"
+            animation= {"bouncingAstronautY 9s linear infinite alternate"} src="/images/astronaut-640x640.png" />
+        </Box>
+      </Box>
+      <Box
+        className="bouncing-astronaut"
+        position={"absolute"}
+        top={"120vh"}
+        left={"0"}
+        height={"100vh"}
+        w={"100%"}
+        zIndex={"-1"}
+        overflowX={"hidden"}
+      >
+        <Box animation={"bouncingAstronautX 11s linear infinite alternate"}>
+          <Image h="50px"
+            w="50px"
+            animation= {"bouncingAstronautY 11s linear infinite alternate"} src="/images/ast1.png" />
+        </Box>
+      </Box>
+      <Box
+        className="bouncing-astronaut"
+        position={"absolute"}
+        top={"150vh"}
+        left={"0"}
+        height={"100vh"}
+        w={"100%"}
+        zIndex={"-1"}
+        overflowX={"hidden"}
+      >
+        <Box animation={"bouncingAstronautX 7s linear infinite alternate"}>
+          <Image h="50px"
+            w="50px"
+            animation= {"bouncingAstronautY 7s linear infinite alternate"} src="/images/ast1.png" />
+        </Box>
+      </Box>
+      <Box
+        className="bouncing-astronaut"
+        position={"absolute"}
+        top={"100vh"}
+        left={"0"}
+        height={"200vh"}
+        w={"100%"}
+        zIndex={"-1"}
+        overflowX={"hidden"}
+      >
+        <Box animation={"bouncingAstronautX 10s linear infinite alternate"}>
+          <Image h="50px"
+            w="50px"
+            animation= {"bouncingAstronautY 10s linear infinite alternate"} src="/images/ast1.png" />
+        </Box>
+      </Box>
+      <Box
+        className="bouncing-astronaut"
+        position={"absolute"}
+        top={"100vh"}
+        left={"0"}
+        height={"100vh"}
+        w={"100%"}
+        zIndex={"-1"}
+        overflowX={"hidden"}
+      >
+        <Box animation={"bouncingAstronautX 6s linear infinite alternate"}>
+          <Image h="50px"
+            w="50px"
+            animation= {"bouncingAstronautY 10s linear infinite alternate"} src="/images/ast2.png" />
+        </Box>
+      </Box>
+      <Box
+        className="bouncing-astronaut"
+        position={"absolute"}
+        top={"150vh"}
+        left={"0"}
+        height={"100vh"}
+        w={"100%"}
+        zIndex={"-1"}
+        overflowX={"hidden"}
+      >
+        <Box animation={"bouncingAstronautX 10s linear infinite alternate"}>
+          <Image h="50px"
+            w="50px"
+            animation= {"bouncingAstronautY 10s linear infinite alternate"} src="/images/ast2.png" />
+        </Box>
+      </Box>
+      <Box
+        className="bouncing-astronaut"
+        position={"absolute"}
+        top={"190vh"}
+        left={"0"}
+        height={"100vh"}
+        w={"100%"}
+        zIndex={"-1"}
+        overflowX={"hidden"}
+      >
+        <Box animation={"bouncingAstronautX 12s linear infinite alternate"}>
+          <Image h="50px"
+            w="50px"
+            animation= {"bouncingAstronautY 12s linear infinite alternate"} src="/images/ast2.png" />
+        </Box>
+      </Box>
+      <Box
+        className="bouncing-astronaut"
+        position={"absolute"}
+        top={"200vh"}
+        left={"0"}
+        height={"100vh"}
+        w={"100%"}
+        zIndex={"-1"}
+        overflowX={"hidden"}
+      >
+        <Box animation={"bouncingAstronautX 15s linear infinite alternate"}>
+          <Image h="50px"
+            w="50px"
+            animation= {"bouncingAstronautY 15s linear infinite alternate"} src="/images/ast2.png" />
+        </Box>
+      </Box>
+      <Box
+        className="bouncing-astronaut"
+        position={"absolute"}
+        top={"230vh"}
+        left={"0"}
+        height={"100vh"}
+        w={"100%"}
+        zIndex={"-1"}
+        overflowX={"hidden"}
+      >
+        <Box animation={"bouncingAstronautX 10s linear infinite alternate"}>
+          <Image h="50px"
+            w="50px"
+            animation= {"bouncingAstronautY 10s linear infinite alternate"} src="/images/ast2.png" />
+        </Box>
+      </Box>
+      <Box
+        className="bouncing-astronaut"
+        position={"absolute"}
+        top={"530vh"}
+        left={"0"}
+        height={"100vh"}
+        w={"100%"}
+        zIndex={"-1"}
+        overflowX={"hidden"}
+      >
+        <Box animation={"bouncingAstronautX 13s linear infinite alternate"}>
+          <Image h="50px"
+            w="50px"
+            animation= {"bouncingAstronautY 13s linear infinite alternate"} src="/images/ast2.png" />
+        </Box>
+      </Box>
+      <Box
+        className="bouncing-astronaut"
+        position={"absolute"}
+        top={"630vh"}
+        left={"0"}
+        height={"100vh"}
+        w={"100%"}
+        zIndex={"-1"}
+        overflowX={"hidden"}
+      >
+        <Box animation={"bouncingAstronautX 8s linear infinite alternate"}>
+          <Image h="50px"
+            w="50px"
+            animation= {"bouncingAstronautY 8s linear infinite alternate"} src="/images/ast2.png" />
+        </Box>
+      </Box>
+      <Box
+        className="bouncing-astronaut"
+        position={"absolute"}
+        top={"1030vh"}
+        left={"0"}
+        height={"100vh"}
+        w={"100%"}
+        zIndex={"-1"}
+        overflowX={"hidden"}
+      >
+        <Box animation={"bouncingAstronautX 11s linear infinite alternate"}>
+          <Image h="50px"
+            w="50px"
+            animation= {"bouncingAstronautY 11s linear infinite alternate"} src="/images/ast2.png" />
+        </Box>
+      </Box>
+      <Box
+        className="bouncing-astronaut"
+        position={"absolute"}
+        top={"1060vh"}
+        left={"0"}
+        height={"100vh"}
+        w={"100%"}
+        zIndex={"-1"}
+        overflowX={"hidden"}
+      >
+        <Box animation={"bouncingAstronautX 12s linear infinite alternate"}>
+          <Image h="50px"
+            w="50px"
+            animation= {"bouncingAstronautY 12s linear infinite alternate"} src="/images/ast1.png" />
+        </Box>
+      </Box>
+      <Box
+        className="bouncing-astronaut"
+        position={"absolute"}
+        top={"1500vh"}
+        left={"0"}
+        height={"100vh"}
+        w={"100%"}
+        zIndex={"-1"}
+        overflowX={"hidden"}
+      >
+        <Box animation={"bouncingAstronautX 15s linear infinite alternate"}>
+          <Image h="50px"
+            w="50px"
+            animation= {"bouncingAstronautY 15s linear infinite alternate"} src="/images/ast2.png" />
+        </Box>
+      </Box>
+      <Box
+        className="bouncing-astronaut"
+        position={"absolute"}
+        top={"1900vh"}
+        left={"0"}
+        height={"100vh"}
+        w={"100%"}
+        zIndex={"-1"}
+        overflowX={"hidden"}
+      >
+        <Box animation={"bouncingAstronautX 12s linear infinite alternate"}>
+          <Image h="50px"
+            w="50px"
+            animation= {"bouncingAstronautY 12s linear infinite alternate"} src="/images/ast1.png" />
         </Box>
       </Box>
       <MouseParallaxContainer
