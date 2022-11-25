@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {
   Button,
+  Image,
   Box,
   Modal,
   ModalBody,
@@ -19,22 +20,33 @@ import {
   Tr,
   Th,
   Td,
+  Text,
   TableCaption,
   TableContainer,
-  Flex
+  Flex,
 } from "@chakra-ui/react";
 import PlanetModel from "../planet-model/PlanetModel";
 import { planets } from "../../assets/planets";
-import { FaRocket } from "react-icons/fa";
+import { FaMonument, FaRocket } from "react-icons/fa";
 import { useEffect } from "react";
 
 const Travels = ({ destination }) => {
+
   const [start, setStart] = useState("default");
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
-      <Button onClick={() => onOpen()} key="full" m={4} zIndex='3'>
+      <Button
+        onClick={() => onOpen()}
+        key="full"
+        m={4}
+        zIndex="3"
+        bgColor="#084674"
+        color="#fff"
+        fontWeight="100"
+        _hover={{ color: "#000", bgColor: "#358dce" }}
+      >
         Voir les voyages
       </Button>
 
@@ -44,13 +56,13 @@ const Travels = ({ destination }) => {
           <ModalHeader m="2rem auto auto auto" color="#fff">
             Voyages vers {destination}
           </ModalHeader>
-          <ModalCloseButton m="2rem 2rem auto auto" />
+          <ModalCloseButton m="2rem 2rem auto auto" color="#fff" />
           <ModalBody>
             <Heading
               m="auto"
               fontSize="1.5rem"
               color="#fff"
-              fontFamily="inherit"
+              fontFamily="JetBrains Mono, monospace"
               textAlign="center"
             >
               Choisissez votre planète de départ
@@ -86,12 +98,11 @@ const Travels = ({ destination }) => {
             >
               {start !== null ? (
                 start === "default" ? (
-                  <PlanetModel
-                    planet={start
-                      .normalize("NFD")
-                      .replace(/\p{Diacritic}/gu, "")
-                      .toLowerCase()}
-                    size="100px"
+                  <Image
+                    src="/images/interrogation.png"
+                    w="200px"
+                    bgColor="#fff"
+                    borderRadius="100%"
                   />
                 ) : (
                   <PlanetModel
@@ -128,43 +139,36 @@ const Travels = ({ destination }) => {
                   <Table>
                     <Thead>
                       <Tr>
-                        <Th>Rebours</Th>
                         <Th>Départ</Th>
                         <Th>Arrivée</Th>
                         <Th>Réserver</Th>
                       </Tr>
                     </Thead>
                     <Tbody>
-                      {planets
-                        .filter((planet) => planet.name === start)
-                        .map((planet) => {
-                          console.log("start", planet);
-                          planet.destinations
-                            .filter(
-                              (destinationFilter) =>
-                                destinationFilter.planet === destination
-                            )
-                            .map((destinationMap) => {
-                              console.log("destination", planet);
-                              <Tr>
-                                <Td></Td>
-                                <Td>{destinationMap.dateLaunch}</Td>
-                                <Td>{destinationMap.dateArrival}</Td>
-                                <Td>
-                                  <Button>Go</Button>
-                                </Td>
-                              </Tr>;
-                            });
-                        })}
+                      {planets &&
+                        planets
+                          .filter((planet) => planet.name === start)
+                          .map((planet) => {
+                            return planet.destinations
+                              .filter(
+                                (destinationFilter) =>
+                                  destinationFilter.planet === destination
+                              )
+                              .map((destinationMap, index) => {
+                                return (
+                                  <Tr key={index}>
+                                    <Td color='white'>{destinationMap.dateLaunch}</Td>
+                                    <Td color='white'>{destinationMap.dateArrival}</Td>
+                                    <Td>
+                                      <Button w="96px" rightIcon={<FaRocket />}>
+                                        Go
+                                      </Button>
+                                    </Td>
+                                  </Tr>
+                                );
+                              });
+                          })}
                     </Tbody>
-                    <Tfoot>
-                      <Tr>
-                        <Th>Rebours</Th>
-                        <Th>Départ</Th>
-                        <Th>Arrivée</Th>
-                        <Th><Button w='96px' rightIcon={<FaRocket />}>Go</Button></Th>
-                      </Tr>
-                    </Tfoot>
                   </Table>
                 </TableContainer>
               </>

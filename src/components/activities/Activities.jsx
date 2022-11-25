@@ -24,17 +24,27 @@ import { planets } from "../../assets/planets";
 const Activities = ({ planetName }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const myPlanet = planets.filter((planet) => planet.name === planetName);
-  const myPlanetActivities = { ...myPlanet[0].activities }
+  const myPlanetActivities = { ...myPlanet[0].activities };
 
   return (
     <>
-      <Button onClick={() => onOpen()} key="full" m={4} zIndex="3">
+      <Button
+        onClick={() => onOpen()}
+        key="full"
+        m={4}
+        zIndex="3"
+        bgColor="#085c03"
+        color="#fff"
+        fontWeight="100"
+        _hover={{ color: "#000", bgColor: "#3ba135" }}
+      >
         Voir les activités
       </Button>
+
       <Modal onClose={onClose} size="full" isOpen={isOpen}>
         <ModalOverlay />
-        <ModalContent>
-          <ModalHeader m="2rem auto auto auto">
+        <ModalContent bgColor="#111">
+          <ModalHeader m="2rem auto auto auto" color="#fff">
             Activités sur {planetName}
           </ModalHeader>
           <ModalCloseButton m="2rem 2rem auto auto" />
