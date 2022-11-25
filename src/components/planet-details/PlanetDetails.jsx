@@ -1,4 +1,4 @@
-import { Heading, Image, Text, Flex } from "@chakra-ui/react";
+import { Heading, Image, Text, Flex, Button } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./planet-details.css";
@@ -115,9 +115,9 @@ const PlanetDetails = ({ planet, currentScale }) => {
                       {activity.name}
                     </Text>
                   ))} */}
-
+                  <Flex w='100' justifyContent={'center'}>
                 <Activities destination={planetName} />
-                <Travels destination={planetName} />
+                <Travels destination={planetName} /></Flex>
               </div>
             </Flex>
           </div>

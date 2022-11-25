@@ -31,7 +31,7 @@ const Travels = ({ destination }) => {
 
   return (
     <>
-      <Button onClick={() => onOpen()} key="full" m={4}>
+      <Button onClick={() => onOpen()} key="full" m={4} zIndex='3'>
         Voir les voyages
       </Button>
 

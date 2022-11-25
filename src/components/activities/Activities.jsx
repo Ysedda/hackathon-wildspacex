@@ -8,6 +8,7 @@ import {
   ModalHeader,
   ModalOverlay,
   useDisclosure,
+  Box,
   Heading,
   Select,
 } from "@chakra-ui/react";
@@ -17,10 +18,14 @@ const Activities = () => {
 
   return (
     <>
-      <Button onClick={() => onOpen()} key="full" m={4}>
-        Voir les activités
-      </Button>
-
+        <Button
+          onClick={() => onOpen()}
+          key="full"
+          m={4}
+          zIndex="3"
+        >
+          Voir les activités
+        </Button>
       <Modal onClose={onClose} size="full" isOpen={isOpen}>
         <ModalOverlay />
         <ModalContent>
@@ -28,8 +33,7 @@ const Activities = () => {
             Activités sur Jupiter
           </ModalHeader>
           <ModalCloseButton m="2rem 2rem auto auto" />
-          <ModalBody>
-          </ModalBody>
+          <ModalBody></ModalBody>
           <ModalFooter>
             <Button onClick={onClose}>Retour au système solaire</Button>
           </ModalFooter>

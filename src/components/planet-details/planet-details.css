@@ -20,7 +20,7 @@
     border-radius: 10px;
     cursor: pointer;
     display: flex;
-    height: 500px;
+    height: 440px;
     flex-direction: column;
     position: relative;
     width: 600px;  
@@ -55,7 +55,7 @@
   .card::after {  
     background: radial-gradient(
       600px circle at var(--mouse-x) var(--mouse-y), 
-      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.1),
       transparent 40%
     );
     z-index: 1;
@@ -70,7 +70,6 @@
     inset: 1px;
     padding: 10px;
     position: absolute;
-    z-index: 2;
   }
 
   i {  
@@ -114,6 +113,11 @@
   .card-info-title > h3 {
     font-size: 1.1em;
     line-height: 20px;
+  }
+
+  .card-info-title {
+    margin-top: 20px;
+    width: 100%;
   }
   
   .card-info-title > h4 {
