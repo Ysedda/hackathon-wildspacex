@@ -20,15 +20,11 @@ import {
   Tr,
   Th,
   Td,
-  Text,
-  TableCaption,
   TableContainer,
-  Flex,
 } from "@chakra-ui/react";
 import PlanetModel from "../planet-model/PlanetModel";
 import { planets } from "../../assets/planets";
 import { FaMonument, FaRocket } from "react-icons/fa";
-import { useEffect } from "react";
 
 const Travels = ({ destination }) => {
   const [start, setStart] = useState("");
