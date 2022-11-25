@@ -53,7 +53,10 @@ export const planets = [
   {
     name: "Mercure",
     image: "mercure.png",
-    activities: [],
+    activities: [
+      { name: "Usine de pansement", image: "pansement.jpg" },
+      { name: "", image: "pansement.jpg" },
+    ],
     destinations: [
       {
         planet: "Mars",
