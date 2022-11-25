@@ -231,9 +231,9 @@ const Home = () => {
       </MouseParallaxContainer>
       <PlanetList />
       <Citation />
-      <Box
+      <Box display={'flex'}
+      flexDirection='column'
         style={{
-          display: "flex",
           justifyContent: "center",
           alignItems: "center",
           minHeight: "20rem",
@@ -245,6 +245,7 @@ const Home = () => {
         <Text color="#fff" fontSize="2.5rem" mt="5rem" fontFamily="Righteous">
           WildSpaceX
         </Text>
+        <Text  color="#fff" fontSize='md'>Mentions légales</Text>
       </Box>
     </div>
   );
