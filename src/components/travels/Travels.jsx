@@ -100,6 +100,7 @@ const Travels = ({ destination }) => {
                   />
                 )
               ) : null}
+              <PlanetModel planet="rocket" size="100px" />
               <PlanetModel
                 planet={destination
                   .normalize("NFD")
