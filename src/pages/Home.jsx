@@ -11,14 +11,6 @@ import "./home.css";
 import PlanetDetails from "../components/planet-details/PlanetDetails";
 
 const Home = () => {
-  const homeStyle = {
-    backgroundImage:
-      "linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) ,url(/images/background.png)",
-    backgroundRepeat: "repeat",
-    backgroundSize: "40%",
-    backdropFilter: "opacity(10%)",
-  };
-
   useEffect(() => {
     function decodeText() {
       var text = document.getElementsByClassName("decode-text")[0];
@@ -97,7 +89,15 @@ const Home = () => {
   }, []);
 
   return (
-    <div style={homeStyle}>
+    <div
+      style={{
+        backgroundImage:
+          "linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) ,url(/images/background.png)",
+        backgroundRepeat: "repeat",
+        backgroundSize: "40%",
+        backdropFilter: "opacity(10%)",
+      }}
+    >
       <Box
         className="bouncing-astronaut"
         position={"absolute"}
@@ -231,8 +231,9 @@ const Home = () => {
       </MouseParallaxContainer>
       <PlanetList />
       <Citation />
-      <Box display={'flex'}
-      flexDirection='column'
+      <Box
+        display={"flex"}
+        flexDirection="column"
         style={{
           justifyContent: "center",
           alignItems: "center",
@@ -245,7 +246,9 @@ const Home = () => {
         <Text color="#fff" fontSize="2.5rem" mt="5rem" fontFamily="Righteous">
           WildSpaceX
         </Text>
-        <Text  color="#fff" fontSize='md'>Mentions légales</Text>
+        <Text color="#fff" fontSize="md">
+          Mentions légales
+        </Text>
       </Box>
     </div>
   );

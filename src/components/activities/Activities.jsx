@@ -22,7 +22,16 @@ const Activities = ({ planetName }) => {
 
   return (
     <>
-      <Button onClick={() => onOpen()} key="full" m={4} zIndex="3">
+      <Button
+        onClick={() => onOpen()}
+        key="full"
+        m={4}
+        zIndex="3"
+        bgColor="#085c03"
+        color="#fff"
+        fontWeight="100"
+        _hover={{ color: "#000", bgColor: "#3ba135" }}
+      >
         Voir les activités
       </Button>
 
@@ -32,7 +41,7 @@ const Activities = ({ planetName }) => {
           <ModalHeader m="2rem auto auto auto" color="#fff">
             Activités sur {planetName}
           </ModalHeader>
-          <ModalCloseButton m="2rem 2rem auto auto" />
+          <ModalCloseButton m="2rem 2rem auto auto" color="#fff" />
           <ModalBody color="#fff">
             {myPlanet &&
               Object.values(myPlanetActivities).map((activity, index) => (
