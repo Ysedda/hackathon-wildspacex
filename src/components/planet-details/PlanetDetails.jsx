@@ -1,13 +1,23 @@
 import { Heading, Image, Text, Flex } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import "./planet-details.css";
 import { planets } from "../../assets/planets";
 
-const PlanetDetails = (planet) => {
+const PlanetDetails = ({ planet, currentScale }) => {
   const [planetName, setPlanetName] = useState("");
   const [planetRadius, setPlanetRadius] = useState("");
   const [planetTemperature, setPlanetTemperature] = useState("");
   const [planetGravity, setPlanetGravity] = useState("");
+  const [calculScale, setCalculScale] = useState(1);
+
+  useEffect(() => {
+    if (currentScale && calculScale === 1) {
+      const dif = 1 / parseFloat(currentScale);
+      console.log((1+dif)/2);
+      setCalculScale((1+dif)/2);
+    }
+  }, []);
 
   const jupiterActivities = planets.filter(
     (planet) => planet.name === "Jupiter"
@@ -46,16 +56,19 @@ const PlanetDetails = (planet) => {
   }, []);
 
   return (
-    <div id="cards">
+    <motion.div
+      id="cards"
+      key="card"
+      style={{ transformOrigin: "0 100%" }}
+      initial={{ scale: 0 }}
+      animate={{ scale: calculScale }}
+      exit={{ scale: 0 }}
+      transition={{ ease: "easeIn", duration: 0.4 }}
+    >
       <div className="card">
         <div className="card-content">
-          <Flex w="100%" justifyContent={'center'}>
-            <Heading
-              as="h1"
-              color="white"
-              size="2xl"
-              marginBlock="10px"
-            >
+          <Flex w="100%" justifyContent={"center"}>
+            <Heading as="h1" color="white" size="2xl" marginBlock="10px">
               {planetName}
             </Heading>
           </Flex>
@@ -82,15 +95,17 @@ const PlanetDetails = (planet) => {
                   Activités
                 </Heading>
                 {jupiterActivities2 &&
-                  Object.values(jupiterActivities2).map((activity) => (
-                    <Text color="whiteAlpha.600">{activity.name}</Text>
+                  Object.values(jupiterActivities2).map((activity, index) => (
+                    <Text key={index} color="whiteAlpha.600">
+                      {activity.name}
+                    </Text>
                   ))}
               </div>
             </Flex>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

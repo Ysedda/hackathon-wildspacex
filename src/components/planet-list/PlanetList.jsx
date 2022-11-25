@@ -1,14 +1,23 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { Box, Center, Flex, Text } from "@chakra-ui/react";
 import PlanetModel from "../planet-model/PlanetModel";
+import PlanetDetails from "../planet-details/PlanetDetails";
 import Activities from "../activities/Activities";
 import Travels from "../travels/Travels";
-// import { useEffect } from "react";
-
-import "./planetList.css";
+import { useEffect, useState } from "react";
 
 const PlanetList = () => {
+  const [openDetails, setOpenDetails] = useState("");
+
   const { scrollY } = useScroll();
+
+
+  useEffect(() => {
+    return scrollY.onChange((latest) => {
+      console.log("Page scroll: ", latest)
+        setOpenDetails(false);
+    })
+  }, []);
 
   const soleilY = useTransform(scrollY, [0, 400], ["150%", "0%"]);
 
@@ -150,9 +159,25 @@ const PlanetList = () => {
     <>
       <Box h="3900px" overflowX={"hidden"}>
         <Center>
-          <Flex w="400px" direction={"column"}>
+          <Flex w="400px" direction={"column"} position={"relative"}>
+            <Box
+              position={"absolute"}
+              top={"0"}
+              left={"0"}
+              h={"100%"}
+              w={"100%"}
+              zIndex={"500"}
+              onClick={() => {
+                setOpenDetails("Soleil");
+              }}
+              cursor={"pointer"}
+            ></Box>
+            <Box position={"absolute"} top={"0%"} left={"50%"} zIndex={"600"}>
+              <AnimatePresence>
+                {openDetails === "Soleil" && <PlanetDetails planet={openDetails} />}
+              </AnimatePresence>
+            </Box>
             <motion.div style={{ y: soleilY }}>
-              {/* <Planet image="/images/soleil.png" /> */}
               <PlanetModel planet="soleil" size="400px" />
               <Center>
                 <Text color={"white"} fontSize={"3rem"}>
@@ -163,11 +188,26 @@ const PlanetList = () => {
           </Flex>
         </Center>
 
-        <motion.div
+        <Box><motion.div
           style={{ y: mercuryScrollY, x: mercuryScrollX, scale: mercuryScale }}
         >
-          <Flex w="300px" direction={"column"}>
-            {/* <Planet image="/images/mercure.png" /> */}
+          <Flex w="300px" direction={"column"} position={"relative"}>
+            <Box
+              position={"absolute"}
+              top={"0"}
+              left={"0"}
+              h={"100%"}
+              w={"100%"}
+              zIndex={"500"}
+              onClick={() => {
+                setOpenDetails("Mercure");
+              }}
+            ></Box>
+            <Box position={"absolute"} top={"-100%"} left={"50%"} zIndex={"600"} >
+              <AnimatePresence>
+                {openDetails  === "Mercure" && <PlanetDetails planet={openDetails} currentScale={mercuryScale.current}/>}
+              </AnimatePresence>
+            </Box>
             <PlanetModel planet="mercure" size="300px" />
             <Center>
               <Text color={"white"} fontSize={"3rem"}>
@@ -175,12 +215,29 @@ const PlanetList = () => {
               </Text>
             </Center>
           </Flex>
-        </motion.div>
+        </motion.div></Box>
+        
+
         <motion.div
           style={{ y: venusScrollY, x: venusScrollX, scale: venusScale }}
         >
-          <Flex w="300px" direction={"column"}>
-            {/* <Planet image="/images/venus.png" /> */}
+          <Flex w="300px" direction={"column"} position={"relative"}>
+            <Box
+              position={"absolute"}
+              top={"0"}
+              left={"0"}
+              h={"100%"}
+              w={"100%"}
+              zIndex={"500"}
+              onClick={() => {
+                setOpenDetails("Venus");
+              }}
+            ></Box>
+            <Box position={"absolute"} top={"-100%"} left={"50%"} zIndex={"600"} >
+              <AnimatePresence>
+                {openDetails  === "Venus" && <PlanetDetails planet={openDetails} currentScale={venusScale.current}/>}
+              </AnimatePresence>
+            </Box>
             <PlanetModel planet="venus" size="300px" />
             <Center>
               <Text color={"white"} fontSize={"3rem"}>
@@ -189,11 +246,27 @@ const PlanetList = () => {
             </Center>
           </Flex>
         </motion.div>
+
         <motion.div
           style={{ y: terreScrollY, x: terreScrollX, scale: terreScale }}
         >
-          <Flex w="300px" direction={"column"}>
-            {/* <Planet image="/images/terre.png" /> */}
+          <Flex w="300px" direction={"column"} position={"relative"}>
+            <Box
+              position={"absolute"}
+              top={"0"}
+              left={"0"}
+              h={"100%"}
+              w={"100%"}
+              zIndex={"500"}
+              onClick={() => {
+                setOpenDetails("Terre");
+              }}
+            ></Box>
+            <Box position={"absolute"} top={"-100%"} left={"50%"} zIndex={"600"}>
+              <AnimatePresence>
+                {openDetails  === "Terre" && <PlanetDetails planet={openDetails} currentScale={terreScale.current} />}
+              </AnimatePresence>
+            </Box>
             <PlanetModel planet="terre" size="300px" />
             <Center>
               <Text color={"white"} fontSize={"3rem"}>
@@ -202,11 +275,27 @@ const PlanetList = () => {
             </Center>
           </Flex>
         </motion.div>
+
         <motion.div
           style={{ y: marsScrollY, x: marsScrollX, scale: marsScale }}
         >
-          <Flex w="300px" direction={"column"}>
-            {/* <Planet image="/images/mars.png" /> */}
+          <Flex w="300px" direction={"column"} position={"relative"}>
+            <Box
+              position={"absolute"}
+              top={"0"}
+              left={"0"}
+              h={"100%"}
+              w={"100%"}
+              zIndex={"3"}
+              onClick={() => {
+                setOpenDetails("Mars");
+              }}
+            ></Box>
+            <Box position={"absolute"} top={"-100%"} left={"50%"} zIndex={"600"}>
+              <AnimatePresence>
+                {openDetails  === "Mars" && <PlanetDetails planet={openDetails} currentScale={marsScale.current}/>}
+              </AnimatePresence>
+            </Box>
             <PlanetModel planet="mars" size="300px" />
             <Center>
               <Text color={"white"} fontSize={"3rem"}>
@@ -215,11 +304,27 @@ const PlanetList = () => {
             </Center>
           </Flex>
         </motion.div>
+
         <motion.div
           style={{ y: jupiterScrollY, x: jupiterScrollX, scale: jupiterScale }}
         >
-          <Flex w="500px" direction={"column"}>
-            {/* <Planet image="/images/jupiter.png" /> */}
+          <Flex w="500px" direction={"column"} position={"relative"}>
+            <Box
+              position={"absolute"}
+              top={"0"}
+              left={"0"}
+              h={"100%"}
+              w={"100%"}
+              zIndex={"3"}
+              onClick={() => {
+                setOpenDetails("Jupiter");
+              }}
+            ></Box>
+            <Box position={"absolute"} top={"-60%"} left={"50%"} zIndex={"600"}>
+              <AnimatePresence>
+                {openDetails === "Jupiter" && <PlanetDetails planet={openDetails} currentScale={jupiterScale.current}/>}
+              </AnimatePresence>
+            </Box>
             <PlanetModel planet="jupiter" size="500px" />
             <Center>
               <Text color={"white"} fontSize={"3rem"}>
@@ -228,11 +333,27 @@ const PlanetList = () => {
             </Center>
           </Flex>
         </motion.div>
+
         <motion.div
           style={{ y: saturneScrollY, x: saturneScrollX, scale: saturneScale }}
         >
-          <Flex w="400px" direction={"column"}>
-            {/* <Planet image="/images/saturne.png" /> */}
+          <Flex w="400px" direction={"column"} position={"relative"}>
+            <Box
+              position={"absolute"}
+              top={"0"}
+              left={"0"}
+              h={"100%"}
+              w={"100%"}
+              zIndex={"3"}
+              onClick={() => {
+                setOpenDetails("Saturne");
+              }}
+            ></Box>
+            <Box position={"absolute"} top={"-40%"} left={"50%"} zIndex={"600"}>
+              <AnimatePresence>
+                {openDetails === "Saturne" && <PlanetDetails planet={openDetails} currentScale={saturneScale.current*2}/>}
+              </AnimatePresence>
+            </Box>
             <PlanetModel planet="saturne" size="400px" />
             <Center>
               <Text color={"white"} fontSize={"2rem"}>
@@ -241,11 +362,27 @@ const PlanetList = () => {
             </Center>
           </Flex>
         </motion.div>
+
         <motion.div
           style={{ y: uranusScrollY, x: uranusScrollX, scale: uranusScale }}
         >
-          <Flex w="300px" direction={"column"}>
-            {/* <Planet image="/images/uranus.png" /> */}
+          <Flex w="300px" direction={"column"} position={"relative"}>
+            <Box
+              position={"absolute"}
+              top={"0"}
+              left={"0"}
+              h={"100%"}
+              w={"100%"}
+              zIndex={"3"}
+              onClick={() => {
+                setOpenDetails("Uranus");
+              }}
+            ></Box>
+            <Box position={"absolute"} top={"-100%"} left={"50%"} zIndex={"600"}>
+              <AnimatePresence>
+                {openDetails === "Uranus" && <PlanetDetails planet={openDetails} currentScale={uranusScale.current}/>}
+              </AnimatePresence>
+            </Box>
             <PlanetModel planet="uranus" size="300px" />
             <Center>
               <Text color={"white"} fontSize={"2rem"}>
@@ -254,11 +391,27 @@ const PlanetList = () => {
             </Center>
           </Flex>
         </motion.div>
+
         <motion.div
           style={{ y: neptuneScrollY, x: neptuneScrollX, scale: neptuneScale }}
         >
-          <Flex w="300px" direction={"column"}>
-            {/* <Planet image="/images/neptune.png" /> */}
+          <Flex w="300px" direction={"column"} position={"relative"}>
+            <Box
+              position={"absolute"}
+              top={"0"}
+              left={"0"}
+              h={"100%"}
+              w={"100%"}
+              zIndex={"3"}
+              onClick={() => {
+                setOpenDetails("Neptune");
+              }}
+            ></Box>
+            <Box position={"absolute"} top={"-100%"} left={"50%"} zIndex={"600"}>
+              <AnimatePresence>
+                {openDetails === "Neptune" && <PlanetDetails planet={openDetails} currentScale={neptuneScale.current}/>}
+              </AnimatePresence>
+            </Box>
             <PlanetModel planet="neptune" size="300px" />
             <Center>
               <Text color={"white"} fontSize={"2rem"}>
@@ -267,6 +420,7 @@ const PlanetList = () => {
             </Center>
           </Flex>
         </motion.div>
+
         <Activities destination="jupiter" />
         <Travels destination="soleil" />
       </Box>
