@@ -3,9 +3,9 @@ export const planets = [
     name: "Soleil",
     image: "soleil.png",
     activities: [
-      { name: "Bronzage", image: "bronzage.jpg" },
-      { name: "Barbecue", image: "barbecue.jpg" },
-      { name: "Source chaude", image: "source.jpg" },
+      { name: "Bronzage", image: "images/bronzage.jpg" },
+      { name: "Barbecue", image: "images/barbecue.jpeg" },
+      { name: "Source chaude", image: "images/lave.jpg" },
     ],
     destinations: [],
   },
@@ -13,8 +13,7 @@ export const planets = [
     name: "Mercure",
     image: "mercure.png",
     activities: [
-      { name: "Usine de pansement", image: "pansement.jpg" },
-      { name: "", image: "pansement.jpg" },
+      { name: "Usine de pansement", image: "images/mercure.jpg" },
     ],
     destinations: [
       {
@@ -103,8 +102,8 @@ export const planets = [
     name: "Vénus",
     image: "venus.png",
     activities: [
-      { name: "Faire du tennis avec Mme Williams", image: "tennis.jpg" },
-      { name: "Usine Gillette", image: "gillette.jpg" },
+      { name: "Faire du tennis avec Mme Williams", image: "images/tennis.jpg" },
+      { name: "Usine Gillette", image: "images/gillette.png" },
     ],
     destinations: [
       {
@@ -193,9 +192,9 @@ export const planets = [
     name: "Terre",
     image: "terre.png",
     activities: [
-      { name: "Moncuq", image: "moncuq.jpg" },
-      { name: "Lab'O", image: "labo.jpg" },
-      { name: "Surf", image: "surf.jpg" },
+      { name: "Moncuq", image: "images/moncuq.jpeg" },
+      { name: "Lab'O", image: "images/lab'o.webp" },
+      { name: "Surf", image: "images/surf.jpg" },
     ],
     destinations: [
       {
@@ -284,9 +283,8 @@ export const planets = [
     name: "Mars",
     image: "mars.png",
     activities: [
-      { name: "Manger des snacks", image: "mars.jpg" },
-      { name: "Visite chutes d'eau", image: "eau.jpg" },
-      { name: "Olympus Mons", image: "montagne.jpg" },
+      { name: "Manger des snacks", image: "images/snack.jpg" },
+      { name: "Olympus Mons", image: "images/montagne.jpg" },
     ],
     destinations: [
       {
@@ -375,8 +373,8 @@ export const planets = [
     name: "Jupiter",
     image: "jupiter.png",
     activities: [
-      { name: "Visite guidée avec M.Channing Tatum", image: "tatum.jpg" },
-      { name: "Chasseur de tornade", image: "tornade.jpg" },
+      { name: "Visite guidée avec M.Channing Tatum", image: "images/jupiter.jpg" },
+      { name: "Chasseur de tornade", image: "images/tornade.jpeg" },
     ],
     destinations: [
       {
@@ -465,9 +463,9 @@ export const planets = [
     name: "Saturne",
     image: "saturne.png",
     activities: [
-      { name: "Kart sur les anneaux", image: "kart.jpg" },
-      { name: "Visite des lunes", image: "lune.jpg" },
-      { name: "Trou de ver de Nolan", image: "source.jpg" },
+      { name: "Kart sur les anneaux", image: "images/kart.jpeg" },
+      { name: "Visite des lunes", image: "images/lune.jpg" },
+      { name: "Trou de ver de Nolan", image: "images/interstellar-trou-noir.webp" },
     ],
     destinations: [
       {
@@ -556,9 +554,9 @@ export const planets = [
     name: "Uranus",
     image: "uranus.png",
     activities: [
-      { name: "Blanchiments des ... dents", image: "dent.jpg" },
-      { name: "Musée Jeux de mots", image: "mots.jpg" },
-      { name: "Visite de ses lunes", image: "lunes.jpg" },
+      { name: "Blanchiments des ... dents", image: "images/dent.jpg" },
+      { name: "Musée Jeux de mots", image: "images/mots.jpg" },
+      { name: "Visite de ses lunes", image: "images/lunes.jpg" },
     ],
     destinations: [
       {
@@ -647,8 +645,8 @@ export const planets = [
     name: "Neptune",
     image: "neptune.png",
     activities: [
-      { name: "Boire un triton sur Triton", image: "triton.jpg" },
-      { name: "Viste du cortege", image: "cortege.jpg" },
+      { name: "Boire un triton sur Triton", image: "images/triton.jpg" },
+      { name: "Viste du cortege", image: "images/cortege.jpeg" },
     ],
     destinations: [
       {

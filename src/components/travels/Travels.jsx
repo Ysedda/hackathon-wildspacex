@@ -20,20 +20,23 @@ import {
   Tr,
   Th,
   Td,
-  Text,
-  TableCaption,
   TableContainer,
-  Flex,
 } from "@chakra-ui/react";
 import PlanetModel from "../planet-model/PlanetModel";
 import Countdown from "react-countdown";
 import { planets } from "../../assets/planets";
-import { FaMonument, FaRocket } from "react-icons/fa";
 import { useEffect } from "react";
+import Go from "../go/Go";
+import { FaMonument, FaRocket } from "react-icons/fa";
 
 const Travels = ({ destination }) => {
-  const [start, setStart] = useState("default");
+  const [start, setStart] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const handleSelect = (e) => {
+    setStart("");
+    setTimeout(() => {setStart(e.target.value)}, 0);
+  };
 
   return (
     <>
@@ -74,10 +77,10 @@ const Travels = ({ destination }) => {
               color="#000"
               bgColor="var(--chakra-colors-gray-100)"
               onChange={(e) => {
-                setStart(e.target.value);
+                handleSelect(e);
               }}
               name="select-start"
-              value={start}
+
             >
               {planets
                 .filter(
@@ -96,8 +99,7 @@ const Travels = ({ destination }) => {
               justifyContent="space-evenly"
               m="3rem auto"
             >
-              {start !== null ? (
-                start === "default" ? (
+              {start === "" ? (
                   <Image
                     src="/images/interrogation.png"
                     w="200px"
@@ -105,17 +107,17 @@ const Travels = ({ destination }) => {
                     borderRadius="100%"
                   />
                 ) : (
-                  <PlanetModel
-                    planet={start
-                      .normalize("NFD")
-                      .replace(/\p{Diacritic}/gu, "")
-                      .toLowerCase()}
-                    size="200px"
-                    start={start}
-                  />
-                )
-              ) : null}
-              <PlanetModel planet="rocket" size="100px" />
+                  <>
+                    <PlanetModel
+                      planet={start
+                        .normalize("NFD")
+                        .replace(/\p{Diacritic}/gu, "")
+                        .toLowerCase()}
+                      size="200px"
+                    />
+                    <PlanetModel planet="rocket" size="100px" />
+                  </>
+                )}
               <PlanetModel
                 planet={destination
                   .normalize("NFD")
@@ -125,7 +127,7 @@ const Travels = ({ destination }) => {
               />
             </Box>
 
-            {start !== null && start !== "default" ? (
+            {start !== "" ? (
               <>
                 {destination === "Soleil" ? (
                   <Box
@@ -139,7 +141,7 @@ const Travels = ({ destination }) => {
                     le vaisseau-voyageur repart ensuite pour sa station de
                     lancement. Merci pour votre compréhension.
                   </Box>
-                ) : null}
+                ) : <Box></Box>}
                 <TableContainer>
                   <Table>
                     <Thead>
@@ -190,9 +192,7 @@ const Travels = ({ destination }) => {
                                       {dateArrival.toLocaleDateString()}
                                     </Td>
                                     <Td>
-                                      <Button w="96px" rightIcon={<FaRocket />}>
-                                        Go
-                                      </Button>
+                                      <Go />
                                     </Td>
                                   </Tr>
                                 );
@@ -202,7 +202,7 @@ const Travels = ({ destination }) => {
                   </Table>
                 </TableContainer>
               </>
-            ) : null}
+            ) : <Box></Box>}
           </ModalBody>
           <ModalFooter>
             <Button onClick={onClose}>Retour au système solaire</Button>
