@@ -92,7 +92,7 @@ const PlanetsModel = ({ planet, size }) => {
         controls.maxPolarAngle = Math.PI / 2;
       }
 
-      loadGLTFModel(scene, `/images/${planet}.glb`, {
+      loadGLTFModel(scene, `images/${planet}.glb`, {
         receiveShadow: false,
         castShadow: false,
       }).then(() => {

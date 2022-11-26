@@ -77,7 +77,7 @@ const PlanetDetails = ({ planet, currentScale, originScale }) => {
             </Heading>
           </Flex>
           <div className="card-image">
-            <Image src={`/images/${planetNameLower}.png`}></Image>
+            <Image src={`images/${planetNameLower}.png`}></Image>
           </div>
           <div className="card-info-wrapper">
             <Flex className="card-info" flexDirection={"column"}>

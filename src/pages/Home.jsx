@@ -6,9 +6,7 @@ import {
   MouseParallaxContainer,
 } from "react-parallax-mouse";
 import PlanetList from "../components/planet-list/PlanetList";
-import PlanetModel from "../components/planet-model/PlanetModel";
 import "./home.css";
-import PlanetDetails from "../components/planet-details/PlanetDetails";
 
 const Home = () => {
   useEffect(() => {
@@ -92,7 +90,7 @@ const Home = () => {
     <div
       style={{
         backgroundImage:
-          "linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) ,url(/images/background.png)",
+          "linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) ,url(images/background.png)",
         backgroundRepeat: "repeat",
         backgroundSize: "40%",
         backdropFilter: "opacity(10%)",
@@ -113,7 +111,7 @@ const Home = () => {
             h="50px"
             w="50px"
             animation= {"bouncingAstronautY 9.2s linear infinite alternate"}
-            src="/images/astronaut-640x640.png"
+            src="images/astronaut-640x640.png"
           />
         </Box>
       </Box>
@@ -130,7 +128,7 @@ const Home = () => {
         <Box animation={"bouncingAstronautX 8s linear infinite alternate"}>
           <Image h="50px"
             w="50px"
-            animation= {"bouncingAstronautY 8s linear infinite alternate"} src="/images/astronaut-640x640.png" />
+            animation= {"bouncingAstronautY 8s linear infinite alternate"} src="images/astronaut-640x640.png" />
         </Box>
       </Box>
       <Box
@@ -146,7 +144,7 @@ const Home = () => {
         <Box animation={"bouncingAstronautX 9s linear infinite alternate"}>
           <Image h="50px"
             w="50px"
-            animation= {"bouncingAstronautY 9s linear infinite alternate"} src="/images/astronaut-640x640.png" />
+            animation= {"bouncingAstronautY 9s linear infinite alternate"} src="images/astronaut-640x640.png" />
         </Box>
       </Box>
       <Box
@@ -162,7 +160,7 @@ const Home = () => {
         <Box animation={"bouncingAstronautX 11s linear infinite alternate"}>
           <Image h="50px"
             w="50px"
-            animation= {"bouncingAstronautY 11s linear infinite alternate"} src="/images/ast1.png" />
+            animation= {"bouncingAstronautY 11s linear infinite alternate"} src="images/ast1.png" />
         </Box>
       </Box>
       <Box
@@ -178,7 +176,7 @@ const Home = () => {
         <Box animation={"bouncingAstronautX 7s linear infinite alternate"}>
           <Image h="50px"
             w="50px"
-            animation= {"bouncingAstronautY 7s linear infinite alternate"} src="/images/ast1.png" />
+            animation= {"bouncingAstronautY 7s linear infinite alternate"} src="images/ast1.png" />
         </Box>
       </Box>
       <Box
@@ -194,7 +192,7 @@ const Home = () => {
         <Box animation={"bouncingAstronautX 10s linear infinite alternate"}>
           <Image h="50px"
             w="50px"
-            animation= {"bouncingAstronautY 10s linear infinite alternate"} src="/images/ast1.png" />
+            animation= {"bouncingAstronautY 10s linear infinite alternate"} src="images/ast1.png" />
         </Box>
       </Box>
       <Box
@@ -210,7 +208,7 @@ const Home = () => {
         <Box animation={"bouncingAstronautX 6s linear infinite alternate"}>
           <Image h="50px"
             w="50px"
-            animation= {"bouncingAstronautY 10s linear infinite alternate"} src="/images/ast2.png" />
+            animation= {"bouncingAstronautY 10s linear infinite alternate"} src="images/ast2.png" />
         </Box>
       </Box>
       <Box
@@ -226,7 +224,7 @@ const Home = () => {
         <Box animation={"bouncingAstronautX 10s linear infinite alternate"}>
           <Image h="50px"
             w="50px"
-            animation= {"bouncingAstronautY 10s linear infinite alternate"} src="/images/ast2.png" />
+            animation= {"bouncingAstronautY 10s linear infinite alternate"} src="images/ast2.png" />
         </Box>
       </Box>
       <Box
@@ -242,7 +240,7 @@ const Home = () => {
         <Box animation={"bouncingAstronautX 12s linear infinite alternate"}>
           <Image h="50px"
             w="50px"
-            animation= {"bouncingAstronautY 12s linear infinite alternate"} src="/images/ast2.png" />
+            animation= {"bouncingAstronautY 12s linear infinite alternate"} src="images/ast2.png" />
         </Box>
       </Box>
       <Box
@@ -258,7 +256,7 @@ const Home = () => {
         <Box animation={"bouncingAstronautX 15s linear infinite alternate"}>
           <Image h="50px"
             w="50px"
-            animation= {"bouncingAstronautY 15s linear infinite alternate"} src="/images/ast2.png" />
+            animation= {"bouncingAstronautY 15s linear infinite alternate"} src="images/ast2.png" />
         </Box>
       </Box>
       <Box
@@ -274,7 +272,7 @@ const Home = () => {
         <Box animation={"bouncingAstronautX 10s linear infinite alternate"}>
           <Image h="50px"
             w="50px"
-            animation= {"bouncingAstronautY 10s linear infinite alternate"} src="/images/ast2.png" />
+            animation= {"bouncingAstronautY 10s linear infinite alternate"} src="images/ast2.png" />
         </Box>
       </Box>
       <Box
@@ -290,7 +288,7 @@ const Home = () => {
         <Box animation={"bouncingAstronautX 13s linear infinite alternate"}>
           <Image h="50px"
             w="50px"
-            animation= {"bouncingAstronautY 13s linear infinite alternate"} src="/images/ast2.png" />
+            animation= {"bouncingAstronautY 13s linear infinite alternate"} src="images/ast2.png" />
         </Box>
       </Box>
       <Box
@@ -306,7 +304,7 @@ const Home = () => {
         <Box animation={"bouncingAstronautX 8s linear infinite alternate"}>
           <Image h="50px"
             w="50px"
-            animation= {"bouncingAstronautY 8s linear infinite alternate"} src="/images/ast2.png" />
+            animation= {"bouncingAstronautY 8s linear infinite alternate"} src="images/ast2.png" />
         </Box>
       </Box>
       <Box
@@ -322,7 +320,7 @@ const Home = () => {
         <Box animation={"bouncingAstronautX 11s linear infinite alternate"}>
           <Image h="50px"
             w="50px"
-            animation= {"bouncingAstronautY 11s linear infinite alternate"} src="/images/ast2.png" />
+            animation= {"bouncingAstronautY 11s linear infinite alternate"} src="images/ast2.png" />
         </Box>
       </Box>
       <Box
@@ -338,7 +336,7 @@ const Home = () => {
         <Box animation={"bouncingAstronautX 12s linear infinite alternate"}>
           <Image h="50px"
             w="50px"
-            animation= {"bouncingAstronautY 12s linear infinite alternate"} src="/images/ast1.png" />
+            animation= {"bouncingAstronautY 12s linear infinite alternate"} src="images/ast1.png" />
         </Box>
       </Box>
       <Box
@@ -354,7 +352,7 @@ const Home = () => {
         <Box animation={"bouncingAstronautX 15s linear infinite alternate"}>
           <Image h="50px"
             w="50px"
-            animation= {"bouncingAstronautY 15s linear infinite alternate"} src="/images/ast2.png" />
+            animation= {"bouncingAstronautY 15s linear infinite alternate"} src="images/ast2.png" />
         </Box>
       </Box>
       <Box
@@ -370,7 +368,7 @@ const Home = () => {
         <Box animation={"bouncingAstronautX 12s linear infinite alternate"}>
           <Image h="50px"
             w="50px"
-            animation= {"bouncingAstronautY 12s linear infinite alternate"} src="/images/ast1.png" />
+            animation= {"bouncingAstronautY 12s linear infinite alternate"} src="images/ast1.png" />
         </Box>
       </Box>
       <MouseParallaxContainer
@@ -384,7 +382,7 @@ const Home = () => {
           factorY={0.1}
           style={{
             background:
-              "url('/images/galaxy-header-bg.png') no-repeat center center",
+              "url('images/galaxy-header-bg.png') no-repeat center center",
             position: "absolute",
             backgroundPosition: "20% 30%",
             backgroundRepeat: "no-repeat",
