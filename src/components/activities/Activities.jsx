@@ -58,8 +58,8 @@ const Activities = ({ planetName }) => {
                       alt={activity.name}
                       borderRadius="lg"
                       backgroundPosition="cover"
-                      h="400px"
-                      w="600px"
+                      h="300px"
+                      w="100%"
                     />
                     <Stack mt="6" spacing="3">
                       <Divider />
